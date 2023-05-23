@@ -1,40 +1,41 @@
 import React from 'react';
 import {
   ChakraProvider,
-  Box,
+  Flex,
   Text,
   Link,
   VStack,
   Code,
-  Grid,
-  theme,
+  Heading,
+  extendTheme
 } from '@chakra-ui/react';
 import { ColorModeSwitcher } from './ColorModeSwitcher';
 import { Logo } from './Logo';
 
+const theme = extendTheme({
+  semanticTokens: {
+    colors: {
+      "chakra-body-text": {
+        _light: "#1e1b11",
+        _dark: "#1e1b11",
+      },
+      "chakra-body-bg": {
+        _light: "#fee893",
+        _dark: "#fee893",
+      },
+    },
+  },
+});
+
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
+      <Flex minWidth="max-content" alignItems="center" textAlign="center" fontSize="xl">
           <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+            <Heading>VDS</Heading>
+          </VStack>    
+          <ColorModeSwitcher justifySelf="flex-end" />
+      </Flex>
     </ChakraProvider>
   );
 }
