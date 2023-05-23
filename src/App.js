@@ -30,11 +30,18 @@ const theme = extendTheme({
 function App() {
   return (
     <ChakraProvider theme={theme}>
+<<<<<<< Updated upstream
       <Flex minWidth="max-content" alignItems="center" textAlign="center" fontSize="xl">
           <VStack spacing={8}>
             <Heading>VDS</Heading>
           </VStack>    
           <ColorModeSwitcher justifySelf="flex-end" />
+=======
+      <Flex textAlign="center" fontSize="xl">
+          <ColorModeSwitcher justifySelf="flex-end" />
+          <VStack spacing={8}>
+          </VStack>
+>>>>>>> Stashed changes
       </Flex>
     </ChakraProvider>
   );
