@@ -1,0 +1,43 @@
+  .container {
+    position: absolute; /* allows the use of top property */
+    top: 25vh; /* starts the container at 25vh */
+    height: 25vh; /* the height of the container will be 25vh (from 25vh to 50vh) */
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: flex-end;
+    left: 25vw;
+    width: 50vw;
+    
+  }
+  
+  .bar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%; /* adjust as needed */
+    /* height is not set, so it will fit the content */
+  }
+
+  .text-container{
+    font-weight: bold;
+    width: 100%;
+  }
+  .bar {
+    width: 2%;
+    background: #1e1b11;
+    animation: rise 1s ease-in-out forwards;
+    border-radius: 10px; /* Add this line. You can adjust the pixel value to get the desired amount of rounding */
+    transform-origin: bottom;
+    opacity: 0;
+  }
+  
+  @keyframes rise {
+    from {
+      transform: scaleY(0);
+    }
+    to {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
