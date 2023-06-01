@@ -32,20 +32,22 @@ import {
 import centParkImg from './projectinfo/images/consprkcent.png';
 import girlScoutImg from './projectinfo/images/girlscouts.png';
 import landTrustImg from './projectinfo/images/landtrust.png';
+import nashZeroImg from './projectinfo/images/nash0.png'
+import vdsLogoImg from './projectinfo/images/vdslogo.png'
 
 const curProject = [
   { title: 'Centennial Park Conservancy', link: '/project1' , image: centParkImg},
   { title: 'Girl Scouts of Middle Tennessee', link: '/project2', image: girlScoutImg},
   { title: 'Geo-spatial Analysis for the Land Trust of Tennessee', link: '/project3', image:landTrustImg },
-  { title: 'Nash0, Striving for Zero Waste', link: '/project1', image: landTrustImg },
-  { title: 'Ancient Artifacts', link: '/project2', image:landTrustImg },
-  { title: 'Email Assist', link: '/project2', image:landTrustImg },
+  { title: 'Nash0: Striving for Zero Waste', link: '/project1', image: nashZeroImg },
+  { title: 'Ancient Artifacts', link: '/project2', image: vdsLogoImg },
+  { title: 'Email Assist', link: '/project2', image: vdsLogoImg },
 ];
 
 const pastProject = [
-  { title: 'Project 1', link: '/project1' },
-  { title: 'Project 2', link: '/project1' },
-  { title: 'Project 3', link: '/project1' },
+  { title: 'Project 1', link: '/project1', image: vdsLogoImg},
+  { title: 'Project 2', link: '/project1', image: vdsLogoImg},
+  { title: 'Project 3', link: '/project1', image: vdsLogoImg},
 ];
 
 const Projects = () => {
@@ -90,11 +92,12 @@ const Projects = () => {
                   <Heading size='md'>{project.title}</Heading>
                 </CardHeader>
                 <CardBody mt={-5}>
-                <Img
-                  src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80'
-                  alt='Green double couch with wooden legs'
-                  borderRadius='lg'
-                />
+                  <Center>
+                    <Img
+                      src={project.image}
+                      borderRadius='lg'
+                    />
+                  </Center>
                 </CardBody>
               </Card>
             </Link>
