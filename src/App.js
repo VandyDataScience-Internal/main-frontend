@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './pages/menuBar/menu';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 // import {
 //   ChakraProvider,
 //   Box,
@@ -15,9 +16,13 @@ import Navbar from './pages/menuBar/menu';
 
 function App() {
   return (
-    <div>
+    <Router>
       <Navbar />
-    </div>
+      <Switch>
+        {/* <Route path="/about-us" component={AboutUs} />
+        <Route path="/projects" component={Projects} /> */}
+      </Switch>
+    </Router>
     // <ChakraProvider theme={theme}>
     //   <Box textAlign="center" fontSize="xl">
     //     <Grid minH="100vh" p={3}>

@@ -1,19 +1,42 @@
-import React, { useState } from 'react';
-import { Box, Flex, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Box, Flex, IconButton, Menu, MenuButton, MenuItem, MenuList, Image } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
+  const navbarRef = useRef(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target) &&
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target)
+      ) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
     <Box position="absolute" top={0} left={0} width="100%">
-      <Flex bg="darkblue" color="white" alignItems="center" height="70px">
-        <Box flex="1" />
+      <Flex bg="teal" color="white" alignItems="center" height="70px" ref={navbarRef}>
+      <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
+          <Image src="logo.png" alt="Logo" boxSize="40px" />
+        </Box>
         <Box position="relative">
           <Menu>
             <MenuButton
@@ -36,82 +59,105 @@ const Navbar = () => {
             <AnimatePresence>
               {isOpen && (
                 <motion.div
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
+                  ref={menuRef}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
-                  style={{ position: 'absolute', top: '100%', left: '50%', transform: 'translateX(-50%)' }}
                 >
-                  <MenuList
-                    bg="darkblue"
-                    color="white"
-                    border="none"
-                    boxShadow="md"
-                    minWidth="120px"
-                    fontSize={18}
-                    textAlign="center"
-                  >
-                    <MenuItem
-                      py={2}
-                      px={4}
-                      height="60px"
-                      _hover={{ bg: 'darkblue', color: 'white' }}
-                      css={{
-                        background: 'darkblue',
-                        border: 'none',
-                      }}
+                  <Box overflow="hidden">
+                    <MenuList
+                      position="relative"
+                      display="grid"
+                      width="100%"
+                      top="-10px"
+                      bg="teal"
+                      color="white"
+                      border="none"
+                      textAlign="center"
                     >
-                      About Us
-                    </MenuItem>
-                    <MenuItem
-                      py={2}
-                      px={4}
-                      height="60px"
-                      _hover={{ bg: 'darkblue', color: 'white' }}
-                      css={{
-                        background: 'darkblue',
-                        border: 'none',
-                      }}
-                    >
-                      Projects
-                    </MenuItem>
-                    <MenuItem
-                      py={2}
-                      px={4}
-                      height="60px"
-                      _hover={{ bg: 'darkblue', color: 'white' }}
-                      css={{
-                        background: 'darkblue',
-                        border: 'none',
-                      }}
-                    >
-                      Opportunities
-                    </MenuItem>
-                    <MenuItem
-                      py={2}
-                      px={4}
-                      height="60px"
-                      _hover={{ bg: 'darkblue', color: 'white' }}
-                      css={{
-                        background: 'darkblue',
-                        border: 'none',
-                      }}
-                    >
-                      Team
-                    </MenuItem>
-                    <MenuItem
-                      py={2}
-                      px={4}
-                      height="60px"
-                      _hover={{ bg: 'darkblue', color: 'white' }}
-                      css={{
-                        background: 'darkblue',
-                        border: 'none',
-                      }}
-                    >
-                      Contact Us
-                    </MenuItem>
-                  </MenuList>
+                      <MenuItem
+                        paddingTop="20px"
+                        paddingBottom="20px"
+                        display="flex"
+                        justifyContent="center"
+                        width="100%"
+                        height="60px"
+                        fontSize="2.5vw"
+                        fontFamily="Sequel 75, Arial, sans-serif"
+                        bg="teal"
+                        _hover={{ bg: 'black', color: 'white' }}
+                        css={{
+                          border: 'none',
+                        }}
+                      >
+                        About Us
+                      </MenuItem>
+                      <MenuItem
+                        paddingTop="20px"
+                        paddingBottom="20px"
+                        display="flex"
+                        justifyContent="center"
+                        width="100%"
+                        height="60px"
+                        fontSize="2.5vw"
+                        bg="teal"
+                        _hover={{ bg: 'black', color: 'white' }}
+                        css={{
+                          border: 'none',
+                        }}
+                      >
+                        Projects
+                      </MenuItem>
+                      <MenuItem
+                        paddingTop="20px"
+                        paddingBottom="20px"
+                        display="flex"
+                        justifyContent="center"
+                        width="100%"
+                        height="60px"
+                        fontSize="2.5vw"
+                        bg="teal"
+                        _hover={{ bg: 'black', color: 'white' }}
+                        css={{
+                          border: 'none',
+                        }}
+                      >
+                        Opportunities
+                      </MenuItem>
+                      <MenuItem
+                        paddingTop="20px"
+                        paddingBottom="20px"
+                        display="flex"
+                        justifyContent="center"
+                        width="100%"
+                        height="60px"
+                        fontSize="2.5vw"
+                        bg="teal"
+                        _hover={{ bg: 'black', color: 'white' }}
+                        css={{
+                          border: 'none',
+                        }}
+                      >
+                        Team
+                      </MenuItem>
+                      <MenuItem
+                        paddingTop="20px"
+                        paddingBottom="20px"
+                        display="flex"
+                        justifyContent="center"
+                        width="100%"
+                        height="60px"
+                        fontSize="2.5vw"
+                        bg="teal"
+                        _hover={{ bg: 'black', color: 'white' }}
+                        css={{
+                          border: 'none',
+                        }}
+                      >
+                        Contact Us
+                      </MenuItem>
+                    </MenuList>
+                  </Box>
                 </motion.div>
               )}
             </AnimatePresence>
