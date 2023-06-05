@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { Box, Flex, IconButton, Menu, MenuButton, MenuItem, MenuList, Image } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -35,9 +36,10 @@ const Navbar = () => {
     <Box position="absolute" top={0} left={0} width="100%">
       <Flex bg="teal" color="white" alignItems="center" height="70px" ref={navbarRef}>
       <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
-          <Image src="logo.png" alt="Logo" boxSize="40px" />
+          <Image src={process.env.PUBLIC_URL + "/IMG_3753.PNG"}
+           alt="Logo" boxSize="80px" width="4.0wv" />
         </Box>
-        <Box position="relative">
+        <Box position="relative" borderRadius="20px">
           <Menu>
             <MenuButton
               as={IconButton}
@@ -88,9 +90,14 @@ const Navbar = () => {
                         _hover={{ bg: 'black', color: 'white' }}
                         css={{
                           border: 'none',
+                          color: 'white',
                         }}
                       >
-                        About Us
+                        <Link to="/about"
+                        style={{
+                          color: 'white',
+                          textDecoration: 'none',
+                        }}>About</Link>
                       </MenuItem>
                       <MenuItem
                         paddingTop="20px"
@@ -106,7 +113,11 @@ const Navbar = () => {
                           border: 'none',
                         }}
                       >
-                        Projects
+                        <Link to="/projects"
+                          style={{
+                          color: 'white',
+                          textDecoration: 'none',
+                        }}>Projects</Link>
                       </MenuItem>
                       <MenuItem
                         paddingTop="20px"
@@ -122,7 +133,11 @@ const Navbar = () => {
                           border: 'none',
                         }}
                       >
-                        Opportunities
+                        <Link to="/opportunites"
+                          style={{
+                          color: 'white',
+                          textDecoration: 'none',
+                        }}>Opportunites</Link>
                       </MenuItem>
                       <MenuItem
                         paddingTop="20px"
@@ -138,7 +153,11 @@ const Navbar = () => {
                           border: 'none',
                         }}
                       >
-                        Team
+                        <Link to="/team"
+                          style={{
+                          color: 'white',
+                          textDecoration: 'none',
+                        }}>Team</Link>
                       </MenuItem>
                       <MenuItem
                         paddingTop="20px"
@@ -154,7 +173,11 @@ const Navbar = () => {
                           border: 'none',
                         }}
                       >
-                        Contact Us
+                        <Link to="/contact_us"
+                          style={{
+                          color: 'white',
+                          textDecoration: 'none',
+                        }}>Contact</Link>
                       </MenuItem>
                     </MenuList>
                   </Box>
