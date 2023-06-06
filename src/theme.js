@@ -5,18 +5,21 @@ const theme = extendTheme({
       heading: `'Roboto', sans-serif`,
       body:  `'Roboto', sans-serif`, 
     },
-    semanticTokens: {
-      colors: {
-        "chakra-body-text": {
-          _light: "#1e1b11",
-          _dark: "#1e1b11",
-        },
-        "chakra-body-bg": {
-          _light: "#fee893",
-          _dark: "#fee893",
-        },
-      },
+    global: {
+
     },
+    // semanticTokens: {
+    //   colors: {
+    //     "chakra-body-text": {
+    //       _light: "#1e1b11",
+    //       _dark: "#1e1b11",
+    //     },
+    //     "chakra-body-bg": {
+    //       _light: "#fee893",
+    //       _dark: "#fee893",
+    //     },
+    //   },
+    // },
   });
 
   export default theme
