@@ -7,24 +7,18 @@ import {
   Heading,
   Box,
   Text,
-  VStack,
   theme,
   Card, 
-  CardHeader, 
   CardBody, 
-  CardFooter,
   Center, 
   Image,
-  Fade,
-  Circle,
-  SimpleGrid,
   Container,
   Stack,
   StackDivider,
 } from '@chakra-ui/react';
 
 
-const ProjectTemplate = () => {
+const LandTrustPg = () => {
   return (
     <ChakraProvider theme={theme}>
         <Center>
@@ -103,4 +97,4 @@ const ProjectTemplate = () => {
   );
 };
 
-export default ProjectTemplate;
+export default LandTrustPg;

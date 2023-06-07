@@ -24,7 +24,7 @@ import {
 } from '@chakra-ui/react';
 
 
-const ProjectTemplate = () => {
+const NashZeroPg = () => {
   return (
     <ChakraProvider theme={theme}>
         <Center>
@@ -96,4 +96,4 @@ const ProjectTemplate = () => {
   );
 };
 
-export default ProjectTemplate;
+export default NashZeroPg;

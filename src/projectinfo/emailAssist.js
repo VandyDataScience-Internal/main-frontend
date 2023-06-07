@@ -18,28 +18,19 @@ import {
 } from '@chakra-ui/react';
 
 
-const AncientArtifactsPg = () => {
+const EmailAssistPg = () => {
   return (
     <ChakraProvider theme={theme}>
         <Center>
           <Heading p={10} as='h1' size='3xl' >
-                <Text fontFamily="Open Sans"> Ancient Artifacts</Text>
+                <Text fontFamily="Open Sans"> Email Assist</Text>
             </Heading>
         </Center>
 
           <Container maxW='container.lg'>
             <Center>
                 <Text fontSize='2xl'>
-                The purpose of the whole project is to identify the
-                location of ancient stone tool manufacturing areas
-                and to understand the public structures and daily
-                community interactions in the small Mayan site of
-                Nacimiento in the Petexbatun region of Guatemala
-                during the 7th and 8th centuries.
-                Our team is trying to understand our stakeholder's
-                models better and make everyone on the same
-                page, and to make improvements to the existing
-                models.
+                  We are making an Email Tool to help people with cognitive disabilities. Email already has issues, and these problems are likely worse for those with cognitive disabilities.
                 </Text>
             </Center>
           </Container>
@@ -99,4 +90,4 @@ const AncientArtifactsPg = () => {
   );
 };
 
-export default AncientArtifactsPg;
+export default EmailAssistPg;
