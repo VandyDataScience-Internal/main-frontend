@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { Box, Flex, IconButton, Menu, MenuButton, MenuItem, MenuList, Image } from '@chakra-ui/react';
+import {
+  Box,
+  Flex,
+  IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Image,
+} from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -14,7 +23,7 @@ const Navbar = () => {
   };
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = event => {
       if (
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
@@ -34,17 +43,33 @@ const Navbar = () => {
 
   return (
     <Box position="absolute" top={0} left={0} width="100%">
-      <Flex bg="teal" color="white" alignItems="center" height="70px" ref={navbarRef}>
-      <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
-          <Image src={process.env.PUBLIC_URL + "/IMG_3753.PNG"}
-           alt="Logo" boxSize="80px" width="4.0wv" />
+      <Flex
+        bg="teal"
+        color="white"
+        alignItems="center"
+        height="70px"
+        ref={navbarRef}
+      >
+        <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
+          <Image
+            src={process.env.PUBLIC_URL + '/vds-logo.PNG'}
+            alt="Logo"
+            boxSize="80px"
+            width="4.0wv"
+          />
         </Box>
         <Box position="relative" borderRadius="20px">
           <Menu>
             <MenuButton
               as={IconButton}
               aria-label="Options"
-              icon={isOpen ? <CloseIcon boxSize={30} color="white" /> : <HamburgerIcon boxSize={45} color="white" />}
+              icon={
+                isOpen ? (
+                  <CloseIcon boxSize={30} color="white" />
+                ) : (
+                  <HamburgerIcon boxSize={45} color="white" />
+                )
+              }
               variant="unstyled"
               width="70px"
               height="70px"
@@ -93,11 +118,15 @@ const Navbar = () => {
                           color: 'white',
                         }}
                       >
-                        <Link to="/about"
-                        style={{
-                          color: 'white',
-                          textDecoration: 'none',
-                        }}>About</Link>
+                        <Link
+                          to="/about"
+                          style={{
+                            color: 'white',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          About
+                        </Link>
                       </MenuItem>
                       <MenuItem
                         paddingTop="20px"
@@ -113,11 +142,15 @@ const Navbar = () => {
                           border: 'none',
                         }}
                       >
-                        <Link to="/projects"
+                        <Link
+                          to="/projects"
                           style={{
-                          color: 'white',
-                          textDecoration: 'none',
-                        }}>Projects</Link>
+                            color: 'white',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          Projects
+                        </Link>
                       </MenuItem>
                       <MenuItem
                         paddingTop="20px"
@@ -133,11 +166,15 @@ const Navbar = () => {
                           border: 'none',
                         }}
                       >
-                        <Link to="/opportunites"
+                        <Link
+                          to="/opportunites"
                           style={{
-                          color: 'white',
-                          textDecoration: 'none',
-                        }}>Opportunites</Link>
+                            color: 'white',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          Opportunites
+                        </Link>
                       </MenuItem>
                       <MenuItem
                         paddingTop="20px"
@@ -153,11 +190,15 @@ const Navbar = () => {
                           border: 'none',
                         }}
                       >
-                        <Link to="/team"
+                        <Link
+                          to="/team"
                           style={{
-                          color: 'white',
-                          textDecoration: 'none',
-                        }}>Team</Link>
+                            color: 'white',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          Team
+                        </Link>
                       </MenuItem>
                       <MenuItem
                         paddingTop="20px"
@@ -173,11 +214,15 @@ const Navbar = () => {
                           border: 'none',
                         }}
                       >
-                        <Link to="/contact_us"
+                        <Link
+                          to="/contact_us"
                           style={{
-                          color: 'white',
-                          textDecoration: 'none',
-                        }}>Contact</Link>
+                            color: 'white',
+                            textDecoration: 'none',
+                          }}
+                        >
+                          Contact
+                        </Link>
                       </MenuItem>
                     </MenuList>
                   </Box>
