@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import Home from './pages/home.js';
 import InstaFeed from './Instagramposts';
 import Navbar from './nav/menuBar.js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Projects from './pages/projects.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ChakraProvider, Flex, VStack } from '@chakra-ui/react';
 import theme from './theme';
 
@@ -11,10 +12,17 @@ function App() {
   //console.log(feeds.data[0].media_url)
   return (
     <>
-      <Router>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/Projects" element={<Projects />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <Router>
         <Navbar />
         <Routes></Routes>
-      </Router>
+      </Router> */}
       <ChakraProvider theme={theme}>
         <Flex
           minWidth="max-content"

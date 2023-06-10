@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 import {
   Box,
   Flex,
@@ -11,7 +11,13 @@ import {
   Image,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { AnimatePresence, motion } from 'framer-motion';
+// import { AnimatePresence, motion } from 'framer-motion';
+// import { blog } from './pages/blog';
+// import { contact } from './pages/contact';
+// import { home } from './pages/home.js';
+// import { opportunities } from './pages/opportunities';
+import Projects from '../pages/projects.js';
+// import { team } from './pages/team';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,6 +67,7 @@ const Navbar = () => {
         <Box position="relative" borderRadius="20px">
           <Menu>
             <MenuButton
+              style={styles.button}
               as={IconButton}
               aria-label="Options"
               icon={
@@ -70,18 +77,10 @@ const Navbar = () => {
                   <HamburgerIcon boxSize={45} color="white" />
                 )
               }
-              variant="unstyled"
-              width="70px"
-              height="70px"
               _expanded={{ outline: 'none', boxShadow: 'none' }}
               _focus={{ outline: 'none', boxShadow: 'none' }}
               onClick={toggleMenu}
-              transition="all 1s"
               transform={isOpen ? 'rotate(180deg)' : ''}
-              css={{
-                background: 'transparent',
-                border: 'none',
-              }}
             />
             {/* <AnimatePresence>
               {isOpen && (
@@ -92,159 +91,52 @@ const Navbar = () => {
                   transition={{ duration: 1 }}
                 > */}
             <Box overflow="hidden">
-              <MenuList
-                position="relative"
-                display="grid"
-                width="100%"
-                top="-10px"
-                bg="teal"
-                color="white"
-                border="none"
-                textAlign="center"
-              >
+              <MenuList style={styles.list} bg="teal">
                 <MenuItem
-                  paddingTop="20px"
-                  paddingBottom="20px"
-                  display="flex"
-                  justifyContent="center"
-                  width="100%"
-                  height="60px"
-                  fontSize="2.5vw"
-                  fontFamily="Sequel 75, Arial, sans-serif"
-                  bg="teal"
+                  style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
-                  css={{
-                    border: 'none',
-                    color: 'white',
-                  }}
                 >
-                  <Link
-                    to="src/pages/home.js"
-                    style={{
-                      color: 'white',
-                      textDecoration: 'none',
-                    }}
-                  >
+                  <Link to="/Home" style={styles.link}>
                     Home
                   </Link>
                 </MenuItem>
                 <MenuItem
-                  paddingTop="20px"
-                  paddingBottom="20px"
-                  display="flex"
-                  justifyContent="center"
-                  width="100%"
-                  height="60px"
-                  fontSize="2.5vw"
-                  bg="teal"
+                  style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
-                  css={{
-                    border: 'none',
-                  }}
                 >
-                  <Link
-                    to="src/pages/projects.js"
-                    style={{
-                      color: 'white',
-                      textDecoration: 'none',
-                    }}
-                  >
+                  <Link to="/Projects" style={styles.link}>
                     Projects
                   </Link>
                 </MenuItem>
                 <MenuItem
-                  paddingTop="20px"
-                  paddingBottom="20px"
-                  display="flex"
-                  justifyContent="center"
-                  width="100%"
-                  height="60px"
-                  fontSize="2.5vw"
-                  bg="teal"
+                  style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
-                  css={{
-                    border: 'none',
-                  }}
                 >
-                  <Link
-                    to="src/pages/team.js"
-                    style={{
-                      color: 'white',
-                      textDecoration: 'none',
-                    }}
-                  >
+                  <Link to="./pages/team" style={styles.link}>
                     Team
                   </Link>
                 </MenuItem>
                 <MenuItem
-                  paddingTop="20px"
-                  paddingBottom="20px"
-                  display="flex"
-                  justifyContent="center"
-                  width="100%"
-                  height="60px"
-                  fontSize="2.5vw"
-                  bg="teal"
+                  style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
-                  css={{
-                    border: 'none',
-                  }}
                 >
-                  <Link
-                    to="src/pages/blog.js"
-                    style={{
-                      color: 'white',
-                      textDecoration: 'none',
-                    }}
-                  >
+                  <Link to="./pages/blog" style={styles.link}>
                     Blog
                   </Link>
                 </MenuItem>
                 <MenuItem
-                  paddingTop="20px"
-                  paddingBottom="20px"
-                  display="flex"
-                  justifyContent="center"
-                  width="100%"
-                  height="60px"
-                  fontSize="2.5vw"
-                  bg="teal"
+                  style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
-                  css={{
-                    border: 'none',
-                  }}
                 >
-                  <Link
-                    to="src/pages/contact.js"
-                    style={{
-                      color: 'white',
-                      textDecoration: 'none',
-                    }}
-                  >
+                  <Link to="./pages/contact" style={styles.link}>
                     Contact Us
                   </Link>
                 </MenuItem>
                 <MenuItem
-                  paddingTop="20px"
-                  paddingBottom="20px"
-                  display="flex"
-                  justifyContent="center"
-                  width="100%"
-                  height="60px"
-                  fontSize="2.5vw"
-                  bg="teal"
+                  style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
-                  css={{
-                    border: 'none',
-                  }}
                 >
-                  <Link
-                    to="src/pages/opportunities.js"
-                    style={{
-                      color: 'white',
-                      textDecoration: 'none',
-                    }}
-                  >
+                  <Link to="./pages/opportunities" style={styles.link}>
                     Opportunities
                   </Link>
                 </MenuItem>
@@ -261,3 +153,39 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+let styles = {
+  items: {
+    paddingTop: '20px',
+    paddingBottom: '20px',
+    display: 'flex',
+    justifyContent: 'center',
+    width: '100%',
+    height: '60px',
+    fontSize: '2.5vw',
+    bg: 'teal',
+    border: 'none',
+  },
+  list: {
+    position: 'relative',
+    display: 'grid',
+    width: '100%',
+    top: '-10px',
+
+    color: 'white',
+    border: 'none',
+    textAlign: 'center',
+  },
+  link: {
+    color: 'white',
+    textDecoration: 'none',
+  },
+  button: {
+    variant: 'unstyled',
+    width: '70px',
+    height: '70px',
+    transition: 'all 1s',
+    background: 'transparent',
+    border: 'none',
+  },
+};
