@@ -120,7 +120,7 @@ const Navbar = () => {
                   style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
                 >
-                  <Link to="./pages/blog" style={styles.link}>
+                  <Link to="/Blog" style={styles.link}>
                     Blog
                   </Link>
                 </MenuItem>
@@ -128,7 +128,7 @@ const Navbar = () => {
                   style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
                 >
-                  <Link to="./pages/contact" style={styles.link}>
+                  <Link to="/Contact" style={styles.link}>
                     Contact Us
                   </Link>
                 </MenuItem>
@@ -136,7 +136,7 @@ const Navbar = () => {
                   style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
                 >
-                  <Link to="./pages/opportunities" style={styles.link}>
+                  <Link to="/Opportunities" style={styles.link}>
                     Opportunities
                   </Link>
                 </MenuItem>
