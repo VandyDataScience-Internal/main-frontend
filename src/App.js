@@ -1,40 +1,25 @@
-import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import React, { useEffect, useState } from 'react';
+import Home from './pages/home.js';
+import InstaFeed from './Instagramposts';
+import { ChakraProvider, Flex, VStack } from '@chakra-ui/react';
+import theme from './theme';
 
 function App() {
+  //console.log('test: ')
+  //console.log(feeds.data[0].media_url)
   return (
     <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
-          <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
-          </VStack>
-        </Grid>
-      </Box>
+      <Flex
+        minWidth="max-content"
+        alignItems="center"
+        textAlign="center"
+        fontSize="xl"
+      >
+        <VStack spacing={8}>
+          <Home />
+        </VStack>
+      </Flex>
+      <InstaFeed />
     </ChakraProvider>
   );
 }
