@@ -1,41 +1,48 @@
-import React from 'react';
-import {
-  ChakraProvider,
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  theme,
-} from '@chakra-ui/react';
-import { ColorModeSwitcher } from './ColorModeSwitcher';
-import { Logo } from './Logo';
+import React, { useEffect, useState } from 'react';
+import InstaFeed from './Instagramposts';
+import Navbar from './nav/menuBar.js';
+import Home from './pages/home.js';
+import Projects from './pages/projects.js';
+import Team from './pages/team.js';
+import Blog from './pages/blog.js';
+import Contact from './pages/contact.js';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ChakraProvider, Flex, VStack } from '@chakra-ui/react';
+import theme from './theme';
 
 function App() {
+  //console.log('test: ')
+  //console.log(feeds.data[0].media_url)
   return (
-    <ChakraProvider theme={theme}>
-      <Box textAlign="center" fontSize="xl">
-        <Grid minH="100vh" p={3}>
-          <ColorModeSwitcher justifySelf="flex-end" />
+    <>
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route path="/Projects" element={<Projects />} />
+          <Route path="/Team" element={<Team />} />
+          <Route path="/Blog" element={<Blog />} />
+          <Route path="/Contact" element={<Contact />} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <Router>
+        <Navbar />
+        <Routes></Routes>
+      </Router> */}
+      <ChakraProvider theme={theme}>
+        <Flex
+          minWidth="max-content"
+          alignItems="center"
+          textAlign="center"
+          fontSize="xl"
+        >
           <VStack spacing={8}>
-            <Logo h="40vmin" pointerEvents="none" />
-            <Text>
-              Edit <Code fontSize="xl">src/App.js</Code> and save to reload.
-            </Text>
-            <Link
-              color="teal.500"
-              href="https://chakra-ui.com"
-              fontSize="2xl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn Chakra
-            </Link>
+            <Home />
           </VStack>
-        </Grid>
-      </Box>
-    </ChakraProvider>
+        </Flex>
+        <InstaFeed />
+      </ChakraProvider>
+    </>
   );
 }
 
