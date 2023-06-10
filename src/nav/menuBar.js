@@ -83,152 +83,176 @@ const Navbar = () => {
                 border: 'none',
               }}
             />
-            <AnimatePresence>
+            {/* <AnimatePresence>
               {isOpen && (
                 <motion.div
                   ref={menuRef}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ duration: 1 }}
+                > */}
+            <Box overflow="hidden">
+              <MenuList
+                position="relative"
+                display="grid"
+                width="100%"
+                top="-10px"
+                bg="teal"
+                color="white"
+                border="none"
+                textAlign="center"
+              >
+                <MenuItem
+                  paddingTop="20px"
+                  paddingBottom="20px"
+                  display="flex"
+                  justifyContent="center"
+                  width="100%"
+                  height="60px"
+                  fontSize="2.5vw"
+                  fontFamily="Sequel 75, Arial, sans-serif"
+                  bg="teal"
+                  _hover={{ bg: 'black', color: 'white' }}
+                  css={{
+                    border: 'none',
+                    color: 'white',
+                  }}
                 >
-                  <Box overflow="hidden">
-                    <MenuList
-                      position="relative"
-                      display="grid"
-                      width="100%"
-                      top="-10px"
-                      bg="teal"
-                      color="white"
-                      border="none"
-                      textAlign="center"
-                    >
-                      <MenuItem
-                        paddingTop="20px"
-                        paddingBottom="20px"
-                        display="flex"
-                        justifyContent="center"
-                        width="100%"
-                        height="60px"
-                        fontSize="2.5vw"
-                        fontFamily="Sequel 75, Arial, sans-serif"
-                        bg="teal"
-                        _hover={{ bg: 'black', color: 'white' }}
-                        css={{
-                          border: 'none',
-                          color: 'white',
-                        }}
-                      >
-                        <Link
-                          to="/about"
-                          style={{
-                            color: 'white',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          About
-                        </Link>
-                      </MenuItem>
-                      <MenuItem
-                        paddingTop="20px"
-                        paddingBottom="20px"
-                        display="flex"
-                        justifyContent="center"
-                        width="100%"
-                        height="60px"
-                        fontSize="2.5vw"
-                        bg="teal"
-                        _hover={{ bg: 'black', color: 'white' }}
-                        css={{
-                          border: 'none',
-                        }}
-                      >
-                        <Link
-                          to="/projects"
-                          style={{
-                            color: 'white',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          Projects
-                        </Link>
-                      </MenuItem>
-                      <MenuItem
-                        paddingTop="20px"
-                        paddingBottom="20px"
-                        display="flex"
-                        justifyContent="center"
-                        width="100%"
-                        height="60px"
-                        fontSize="2.5vw"
-                        bg="teal"
-                        _hover={{ bg: 'black', color: 'white' }}
-                        css={{
-                          border: 'none',
-                        }}
-                      >
-                        <Link
-                          to="/opportunites"
-                          style={{
-                            color: 'white',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          Opportunites
-                        </Link>
-                      </MenuItem>
-                      <MenuItem
-                        paddingTop="20px"
-                        paddingBottom="20px"
-                        display="flex"
-                        justifyContent="center"
-                        width="100%"
-                        height="60px"
-                        fontSize="2.5vw"
-                        bg="teal"
-                        _hover={{ bg: 'black', color: 'white' }}
-                        css={{
-                          border: 'none',
-                        }}
-                      >
-                        <Link
-                          to="/team"
-                          style={{
-                            color: 'white',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          Team
-                        </Link>
-                      </MenuItem>
-                      <MenuItem
-                        paddingTop="20px"
-                        paddingBottom="20px"
-                        display="flex"
-                        justifyContent="center"
-                        width="100%"
-                        height="60px"
-                        fontSize="2.5vw"
-                        bg="teal"
-                        _hover={{ bg: 'black', color: 'white' }}
-                        css={{
-                          border: 'none',
-                        }}
-                      >
-                        <Link
-                          to="/contact_us"
-                          style={{
-                            color: 'white',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          Contact
-                        </Link>
-                      </MenuItem>
-                    </MenuList>
-                  </Box>
-                </motion.div>
+                  <Link
+                    to="src/pages/home.js"
+                    style={{
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Home
+                  </Link>
+                </MenuItem>
+                <MenuItem
+                  paddingTop="20px"
+                  paddingBottom="20px"
+                  display="flex"
+                  justifyContent="center"
+                  width="100%"
+                  height="60px"
+                  fontSize="2.5vw"
+                  bg="teal"
+                  _hover={{ bg: 'black', color: 'white' }}
+                  css={{
+                    border: 'none',
+                  }}
+                >
+                  <Link
+                    to="src/pages/projects.js"
+                    style={{
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Projects
+                  </Link>
+                </MenuItem>
+                <MenuItem
+                  paddingTop="20px"
+                  paddingBottom="20px"
+                  display="flex"
+                  justifyContent="center"
+                  width="100%"
+                  height="60px"
+                  fontSize="2.5vw"
+                  bg="teal"
+                  _hover={{ bg: 'black', color: 'white' }}
+                  css={{
+                    border: 'none',
+                  }}
+                >
+                  <Link
+                    to="src/pages/team.js"
+                    style={{
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Team
+                  </Link>
+                </MenuItem>
+                <MenuItem
+                  paddingTop="20px"
+                  paddingBottom="20px"
+                  display="flex"
+                  justifyContent="center"
+                  width="100%"
+                  height="60px"
+                  fontSize="2.5vw"
+                  bg="teal"
+                  _hover={{ bg: 'black', color: 'white' }}
+                  css={{
+                    border: 'none',
+                  }}
+                >
+                  <Link
+                    to="src/pages/blog.js"
+                    style={{
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Blog
+                  </Link>
+                </MenuItem>
+                <MenuItem
+                  paddingTop="20px"
+                  paddingBottom="20px"
+                  display="flex"
+                  justifyContent="center"
+                  width="100%"
+                  height="60px"
+                  fontSize="2.5vw"
+                  bg="teal"
+                  _hover={{ bg: 'black', color: 'white' }}
+                  css={{
+                    border: 'none',
+                  }}
+                >
+                  <Link
+                    to="src/pages/contact.js"
+                    style={{
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Contact Us
+                  </Link>
+                </MenuItem>
+                <MenuItem
+                  paddingTop="20px"
+                  paddingBottom="20px"
+                  display="flex"
+                  justifyContent="center"
+                  width="100%"
+                  height="60px"
+                  fontSize="2.5vw"
+                  bg="teal"
+                  _hover={{ bg: 'black', color: 'white' }}
+                  css={{
+                    border: 'none',
+                  }}
+                >
+                  <Link
+                    to="src/pages/opportunities.js"
+                    style={{
+                      color: 'white',
+                      textDecoration: 'none',
+                    }}
+                  >
+                    Opportunities
+                  </Link>
+                </MenuItem>
+              </MenuList>
+            </Box>
+            {/* </motion.div>
               )}
-            </AnimatePresence>
+            </AnimatePresence> */}
           </Menu>
         </Box>
       </Flex>
