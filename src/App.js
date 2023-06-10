@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import Home from './pages/home.js';
 import InstaFeed from './Instagramposts';
 import Navbar from './nav/menuBar.js';
+import Home from './pages/home.js';
 import Projects from './pages/projects.js';
+import Team from './pages/team.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ChakraProvider, Flex, VStack } from '@chakra-ui/react';
 import theme from './theme';
@@ -16,6 +17,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/Projects" element={<Projects />} />
+          <Route path="/Team" element={<Team />} />
         </Routes>
       </BrowserRouter>
 

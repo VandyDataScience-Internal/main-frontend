@@ -112,7 +112,7 @@ const Navbar = () => {
                   style={styles.items}
                   _hover={{ bg: 'black', color: 'white' }}
                 >
-                  <Link to="./pages/team" style={styles.link}>
+                  <Link to="/Team" style={styles.link}>
                     Team
                   </Link>
                 </MenuItem>
