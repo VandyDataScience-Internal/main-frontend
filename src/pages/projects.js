@@ -10,13 +10,13 @@ import {
 } from 'react-router-dom';
 
 // Individual Pages
-import CentParkPg from '../projectinfo/centennialpark';
-import EmailAssistPg from '../projectinfo/emailAssist';
-import GirlScoutsPg from '../projectinfo/girlscouts';
-import LandTrustPg from '../projectinfo/landtrust';
-import NashZeroPg from '../projectinfo/nash0';
-import AncientArtifactsPg from '../projectinfo/ancientArtifacts';
-import ProjectsMain from '../projectinfo/projectmain';
+import CentParkPg from '../assets/projectinfo/centennialpark';
+import EmailAssistPg from '../assets/projectinfo/emailAssist';
+import GirlScoutsPg from '../assets/projectinfo/girlscouts';
+import LandTrustPg from '../assets/projectinfo/landtrust';
+import NashZeroPg from '../assets/projectinfo/nash0';
+import AncientArtifactsPg from '../assets/projectinfo/ancientArtifacts';
+import ProjectsMain from '../assets/projectinfo/projectmain';
 
 const Projects = () => {
   return (

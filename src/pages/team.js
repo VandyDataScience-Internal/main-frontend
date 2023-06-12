@@ -17,6 +17,10 @@ import {
   Container,
 } from '@chakra-ui/react';
 
+import adaline from '../assets/images/adaline.png';
+import aditya from '../assets/images/aditya.jpeg';
+import brooke from '../assets/images/brooke.png';
+
 const Team = () => {
   function HoverImage({ src, name, pos, about }) {
     /*for copying images right click and select "copy image addreess"*/
@@ -97,18 +101,24 @@ const Team = () => {
             <Heading size="md">Exec</Heading>
             <SimpleGrid columns={3} spacing={5}>
               <HoverImage
-                src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F75b553a1-9360-413c-a0f1-cad9b4539752%2Fimg.png?id=0057bc6c-5ca6-41be-8621-f1db7ffa52c5&table=block&spaceId=3b0a5108-4e9b-4a3b-bbe8-76677053495d&width=600&userId=81523f94-3e73-46f0-9f46-8f50fa5912c9&cache=v2"
+                src={adaline}
                 name="Adaline"
                 pos="President"
                 about="I go to vandy"
               />
-              <HoverImage src="main-frontend\\src\\assets\\images\\1632855087136.jfif" />
+              <HoverImage
+                src={brooke}
+                name="Brooke"
+                pos="Treasurer"
+                about="I have perfect pitch!"
+              />
+              {/* <HoverImage src="main-frontend\\src\\assets\\images\\1632855087136.jfif" /> */}
             </SimpleGrid>{' '}
             {/*This is the grid for Members*/}
             <Heading>Members</Heading>
             <SimpleGrid columns={3} spacing={5}>
               <HoverImage
-                src="https://www.notion.so/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F39201eb5-bf9e-4ac2-8819-a443083c8434%2FAdityaShrey_copy.jpeg?id=55a994c1-2c0e-4708-ad77-4bb752fb4caa&table=block&spaceId=3b0a5108-4e9b-4a3b-bbe8-76677053495d&width=600&userId=81523f94-3e73-46f0-9f46-8f50fa5912c9&cache=v2"
+                src={aditya}
                 name="Aditiya"
                 pos="Developer"
                 about="I like dogs"
