@@ -12,13 +12,6 @@ import {
   Button,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-import { AnimatePresence, motion } from 'framer-motion';
-// import { blog } from './pages/blog';
-// import { contact } from './pages/contact';
-// import { home } from './pages/home.js';
-// import { opportunities } from './pages/opportunities';
-import Projects from '../pages/projects.js';
-// import { team } from './pages/team';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,12 +25,11 @@ const Navbar = () => {
   };
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-  
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
-
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -63,7 +55,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Box position="absolute" top={0} left={0} width="100%">
+    <Box position="fixed" top={0} left={0} width="100%">
       <Flex
         bg="#FDDC7E"
         color="white"
@@ -83,7 +75,7 @@ const Navbar = () => {
           {windowWidth > 950 ? (
             // Render buttons when screen width is less than 950 pixels
             <Flex>
-              <Button as={Link} to="/Home" style={styles.button} >
+              <Button as={Link} to="/Home" style={styles.button}>
                 Home
               </Button>
               <Button as={Link} to="/Projects" style={styles.button}>
@@ -105,94 +97,81 @@ const Navbar = () => {
           ) : (
             // Render menu list when screen width is 950 pixels or more
             <Menu>
-            <MenuButton
-              style={styles.button}
-              as={IconButton}
-              aria-label="Options"
-              icon={
-                isOpen ? (
-                  <CloseIcon boxSize={30} color="white" />
-                ) : (
-                  <HamburgerIcon boxSize={45} color="white" />
-                )
-              }
-              _expanded={{ outline: 'none', boxShadow: 'none' }}
-              _focus={{ outline: 'none', boxShadow: 'none' }}
-              onClick={toggleMenu}
-              transform={isOpen ? 'rotate(180deg)' : ''}
-            />
-            {/* <AnimatePresence>
-              {isOpen && (
-                <motion.div
-                  ref={menuRef}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 1 }}
-                > */}
-            <Box overflow="hidden">
-              <MenuList style={styles.list} bg="#FDDC6A">
-                <MenuItem
-                  style={styles.items}
-                  _hover={{ bg: '#2F2F2F', color: 'white' }}
-                >
-                  <Link to="/Home" style={styles.link}>
-                    Home
-                  </Link>
-                </MenuItem>
-                <MenuItem
-                  style={styles.items}
-                  _hover={{ bg: '#2F2F2F', color: 'white' }}
-                >
-                  <Link to="/Projects" style={styles.link}>
-                    Projects
-                  </Link>
-                </MenuItem>
-                <MenuItem
-                  style={styles.items}
-                  _hover={{ bg: '#2F2F2F', color: 'white' }}
-                >
-                  <Link to="/Team" style={styles.link}>
-                    Team
-                  </Link>
-                </MenuItem>
-                <MenuItem
-                  style={styles.items}
-                  _hover={{ bg: '#2F2F2F', color: 'white' }}
-                >
-                  <Link to="/Blog" style={styles.link}>
-                    Blog
-                  </Link>
-                </MenuItem>
-                <MenuItem
-                  style={styles.items}
-                  _hover={{ bg: '#2F2F2F', color: 'white' }}
-                >
-                  <Link to="/Opportunities" style={styles.link}>
-                    Opportunities
-                  </Link>
-                </MenuItem>
-                <MenuItem
-                  style={styles.items}
-                  _hover={{ bg: '#2F2F2F', color: 'white' }}
-                >
-                  <Link to="/Contact" style={styles.link}>
-                    Contact Us
-                  </Link>
-                </MenuItem>
-              </MenuList>
-            </Box>
-            {/* </motion.div>
-              )}
-            </AnimatePresence> */}
-          </Menu>
+              <MenuButton
+                style={styles.button}
+                as={IconButton}
+                aria-label="Options"
+                icon={
+                  isOpen ? (
+                    <CloseIcon boxSize={30} color="white" />
+                  ) : (
+                    <HamburgerIcon boxSize={45} color="white" />
+                  )
+                }
+                _expanded={{ outline: 'none', boxShadow: 'none' }}
+                _focus={{ outline: 'none', boxShadow: 'none' }}
+                onClick={toggleMenu}
+                transform={isOpen ? 'rotate(180deg)' : ''}
+              />
+              <Box overflow="hidden">
+                <MenuList style={styles.list} bg="#FDDC6A">
+                  <MenuItem
+                    style={styles.items}
+                    _hover={{ bg: '#2F2F2F', color: 'white' }}
+                  >
+                    <Link to="/Home" style={styles.link}>
+                      Home
+                    </Link>
+                  </MenuItem>
+                  <MenuItem
+                    style={styles.items}
+                    _hover={{ bg: '#2F2F2F', color: 'white' }}
+                  >
+                    <Link to="/Projects" style={styles.link}>
+                      Projects
+                    </Link>
+                  </MenuItem>
+                  <MenuItem
+                    style={styles.items}
+                    _hover={{ bg: '#2F2F2F', color: 'white' }}
+                  >
+                    <Link to="/Team" style={styles.link}>
+                      Team
+                    </Link>
+                  </MenuItem>
+                  <MenuItem
+                    style={styles.items}
+                    _hover={{ bg: '#2F2F2F', color: 'white' }}
+                  >
+                    <Link to="/Blog" style={styles.link}>
+                      Blog
+                    </Link>
+                  </MenuItem>
+                  <MenuItem
+                    style={styles.items}
+                    _hover={{ bg: '#2F2F2F', color: 'white' }}
+                  >
+                    <Link to="/Opportunities" style={styles.link}>
+                      Opportunities
+                    </Link>
+                  </MenuItem>
+                  <MenuItem
+                    style={styles.items}
+                    _hover={{ bg: '#2F2F2F', color: 'white' }}
+                  >
+                    <Link to="/Contact" style={styles.link}>
+                      Contact Us
+                    </Link>
+                  </MenuItem>
+                </MenuList>
+              </Box>
+            </Menu>
           )}
         </Box>
       </Flex>
     </Box>
   );
-}
-  
-
+};
 
 export default Navbar;
 
@@ -206,8 +185,8 @@ let styles = {
     height: '60px',
     fontSize: '2.4vw',
     border: 'none',
-    fontWeight:'bold',
-    padding: '20px'
+    fontWeight: 'bold',
+    padding: '20px',
   },
   list: {
     position: 'relative',
@@ -234,5 +213,4 @@ let styles = {
     padding: '15px 15px',
     fontWeight: 'bold',
   },
-
 };
