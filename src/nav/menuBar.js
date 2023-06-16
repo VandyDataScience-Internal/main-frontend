@@ -9,9 +9,10 @@ import {
   MenuItem,
   MenuList,
   Image,
+  Button,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
-// import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 // import { blog } from './pages/blog';
 // import { contact } from './pages/contact';
 // import { home } from './pages/home.js';
@@ -23,6 +24,20 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const menuRef = useRef(null);
   const navbarRef = useRef(null);
+
+  // Track the width of the screen
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  const handleResize = () => {
+    setWindowWidth(window.innerWidth);
+  };
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+  
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -50,7 +65,7 @@ const Navbar = () => {
   return (
     <Box position="absolute" top={0} left={0} width="100%">
       <Flex
-        bg="teal"
+        bg="#FDDC7E"
         color="white"
         alignItems="center"
         height="70px"
@@ -64,8 +79,32 @@ const Navbar = () => {
             width="4.0wv"
           />
         </Box>
-        <Box position="relative" borderRadius="20px">
-          <Menu>
+        <Box position="absolute" right="0" borderRadius="20px">
+          {windowWidth > 950 ? (
+            // Render buttons when screen width is less than 950 pixels
+            <Flex>
+              <Button as={Link} to="/Home" style={styles.button} >
+                Home
+              </Button>
+              <Button as={Link} to="/Projects" style={styles.button}>
+                Projects
+              </Button>
+              <Button as={Link} to="/Team" style={styles.button}>
+                Team
+              </Button>
+              <Button as={Link} to="/Blog" style={styles.button}>
+                Blog
+              </Button>
+              <Button as={Link} to="/Opportunities" style={styles.button}>
+                Opportunities
+              </Button>
+              <Button as={Link} to="/Contact" style={styles.button}>
+                Contact Us
+              </Button>
+            </Flex>
+          ) : (
+            // Render menu list when screen width is 950 pixels or more
+            <Menu>
             <MenuButton
               style={styles.button}
               as={IconButton}
@@ -91,10 +130,10 @@ const Navbar = () => {
                   transition={{ duration: 1 }}
                 > */}
             <Box overflow="hidden">
-              <MenuList style={styles.list} bg="teal">
+              <MenuList style={styles.list} bg="#FDDC6A">
                 <MenuItem
                   style={styles.items}
-                  _hover={{ bg: 'black', color: 'white' }}
+                  _hover={{ bg: '#2F2F2F', color: 'white' }}
                 >
                   <Link to="/Home" style={styles.link}>
                     Home
@@ -102,7 +141,7 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   style={styles.items}
-                  _hover={{ bg: 'black', color: 'white' }}
+                  _hover={{ bg: '#2F2F2F', color: 'white' }}
                 >
                   <Link to="/Projects" style={styles.link}>
                     Projects
@@ -110,7 +149,7 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   style={styles.items}
-                  _hover={{ bg: 'black', color: 'white' }}
+                  _hover={{ bg: '#2F2F2F', color: 'white' }}
                 >
                   <Link to="/Team" style={styles.link}>
                     Team
@@ -118,7 +157,7 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   style={styles.items}
-                  _hover={{ bg: 'black', color: 'white' }}
+                  _hover={{ bg: '#2F2F2F', color: 'white' }}
                 >
                   <Link to="/Blog" style={styles.link}>
                     Blog
@@ -126,18 +165,18 @@ const Navbar = () => {
                 </MenuItem>
                 <MenuItem
                   style={styles.items}
-                  _hover={{ bg: 'black', color: 'white' }}
+                  _hover={{ bg: '#2F2F2F', color: 'white' }}
                 >
-                  <Link to="/Contact" style={styles.link}>
-                    Contact Us
+                  <Link to="/Opportunities" style={styles.link}>
+                    Opportunities
                   </Link>
                 </MenuItem>
                 <MenuItem
                   style={styles.items}
-                  _hover={{ bg: 'black', color: 'white' }}
+                  _hover={{ bg: '#2F2F2F', color: 'white' }}
                 >
-                  <Link to="/Opportunities" style={styles.link}>
-                    Opportunities
+                  <Link to="/Contact" style={styles.link}>
+                    Contact Us
                   </Link>
                 </MenuItem>
               </MenuList>
@@ -146,11 +185,14 @@ const Navbar = () => {
               )}
             </AnimatePresence> */}
           </Menu>
+          )}
         </Box>
       </Flex>
     </Box>
   );
-};
+}
+  
+
 
 export default Navbar;
 
@@ -162,16 +204,17 @@ let styles = {
     justifyContent: 'center',
     width: '100%',
     height: '60px',
-    fontSize: '2.5vw',
-    bg: 'teal',
+    fontSize: '2.4vw',
     border: 'none',
+    fontWeight:'bold',
+    padding: '20px'
   },
   list: {
     position: 'relative',
+    right: '0',
     display: 'grid',
     width: '100%',
-    top: '-10px',
-
+    top: '-18px',
     color: 'white',
     border: 'none',
     textAlign: 'center',
@@ -182,10 +225,14 @@ let styles = {
   },
   button: {
     variant: 'unstyled',
-    width: '70px',
     height: '70px',
     transition: 'all 1s',
     background: 'transparent',
     border: 'none',
+    marginRight: '0px',
+    fontSize: '1.3rem',
+    padding: '15px 15px',
+    fontWeight: 'bold',
   },
+
 };
