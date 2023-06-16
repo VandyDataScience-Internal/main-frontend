@@ -2,24 +2,37 @@ import React, { useState } from 'react';
 import {
   ChakraProvider,
   Heading,
-  Image,
   Box,
   SimpleGrid,
   Tooltip,
-  Text,
-  Link,
   VStack,
-  Wrap,
-  WrapItem,
-  Code,
   theme,
-  Button,
   Container,
+  Card,
+  CardBody,
+  Center,
 } from '@chakra-ui/react';
 
 import adaline from '../assets/images/adaline.png';
 import aditya from '../assets/images/aditya.jpeg';
 import brooke from '../assets/images/brooke.png';
+
+const exec = [
+  {
+    name: 'Adaline',
+    image: adaline,
+    funFact: 'I go to Vandy',
+    pos: 'President',
+  },
+  {
+    name: 'Brooke',
+    image: brooke,
+    funFact: 'I have perfect pitch!',
+    pos: 'Treasurer',
+  },
+];
+
+const members = [{ name: 'aditya', image: aditya, funFact: 'I like dogs' }];
 
 const Team = () => {
   function HoverImage({ src, name, pos, about }) {
@@ -35,33 +48,14 @@ const Team = () => {
 
     return (
       <Box
-        width="150px"
-        height="200px"
-        position="relative"
         onMouseEnter={handleHover}
         onMouseLeave={handleMouseLeave}
+        style={styles.page}
       >
         {!isHovered && <Box as="img" src={src} width="100%" height="100%" />}
         {isHovered && (
-          <Tooltip
-            label={'This should not be visible'}
-            placement="top"
-            isDisabled
-          >
-            <Box
-              width="100%"
-              height="100%"
-              color="black"
-              bg="gray.200"
-              display="flex"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-              p="6px"
-              maxWidth="100%" // Set the maximum width for the text box
-              wordBreak="break-word" // Enable word wrapping
-              whiteSpace="normal" // Allow text to wrap to the next line
-              overflowWrap="break-word" // Enable word wrapping for long words
-            >
+          <Tooltip placement="top" isDisabled>
+            <Box style={styles.sections}>
               <div>
                 {name && (
                   <span>
@@ -99,34 +93,43 @@ const Team = () => {
         <Box marginTop="50px">
           <VStack spacing={10} align="stretch">
             <Heading size="md">Exec</Heading>
-            <SimpleGrid columns={3} spacing={5}>
-              <HoverImage
-                src={adaline}
-                name="Adaline"
-                pos="President"
-                about="I go to vandy"
-              />
-              <HoverImage
-                src={brooke}
-                name="Brooke"
-                pos="Treasurer"
-                about="I have perfect pitch!"
-              />
-              {/* <HoverImage src="main-frontend\\src\\assets\\images\\1632855087136.jfif" /> */}
-            </SimpleGrid>{' '}
+            <SimpleGrid columns={[2, null, 3]} spacing="40px">
+              {exec.map((member, index) => (
+                <Card key={index} height="100%">
+                  <Center>
+                    <CardBody mt={-10}>
+                      <HoverImage
+                        src={member.image}
+                        name={member.name}
+                        pos={member.pos}
+                        about={member.funFact}
+                      />
+                    </CardBody>
+                  </Center>
+                </Card>
+              ))}
+            </SimpleGrid>
             {/*This is the grid for Members*/}
             <Heading>Members</Heading>
-            <SimpleGrid columns={3} spacing={5}>
-              <HoverImage
-                src={aditya}
-                name="Aditiya"
-                pos="Developer"
-                about="I like dogs"
-              />
+            <SimpleGrid columns={[2, null, 3]} spacing="40px">
+              {members.map((member, index) => (
+                <Card key={index}>
+                  <Center>
+                    <CardBody mt={-10}>
+                      <HoverImage
+                        src={member.image}
+                        name={member.name}
+                        pos={member.pos}
+                        about={member.funFact}
+                      />
+                    </CardBody>
+                  </Center>
+                </Card>
+              ))}
             </SimpleGrid>
-            <Heading>Past Members</Heading>{' '}
+            {/* <Heading>Past Members</Heading>{' '}
             {/*This is the grid for past members*/}
-            <SimpleGrid columns={3} spacing={5}></SimpleGrid>
+            {/* <SimpleGrid columns={3} spacing={5}></SimpleGrid> */}
           </VStack>
         </Box>
       </Container>
@@ -135,3 +138,26 @@ const Team = () => {
 };
 
 export default Team;
+
+let styles = {
+  page: {
+    marginTop: '50px',
+    width: '150px',
+    height: '200px',
+    position: 'relative',
+  },
+  sections: {
+    width: '100%',
+    height: '100%',
+    color: 'black',
+    bg: 'gray.200',
+    display: 'flex',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
+    p: '6px',
+    maxWidth: '100%', // Set the maximum width for the text box
+    wordBreak: 'break-word', // Enable word wrapping
+    whiteSpace: 'normal', // Allow text to wrap to the next line
+    overflowWrap: 'break-word', // Enable word wrapping for long words
+  },
+};
