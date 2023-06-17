@@ -38,10 +38,10 @@ const Navbar = () => {
   useEffect(() => {
     const handleClickOutside = event => {
       if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target) &&
-        navbarRef.current &&
-        !navbarRef.current.contains(event.target)
+          menuRef.current &&
+          !menuRef.current.contains(event.target) &&
+          navbarRef.current &&
+          !navbarRef.current.contains(event.target)
       ) {
         setIsOpen(false);
       }
@@ -55,121 +55,124 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Box position="fixed" top={0} left={0} width="100%">
-      <Flex
-        bg="#FDDC7E"
-        color="white"
-        alignItems="center"
-        height="70px"
-        ref={navbarRef}
-      >
-        <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
-          <Image
-            src={process.env.PUBLIC_URL + '/vds-logo.PNG'}
-            alt="Logo"
-            boxSize="80px"
-            width="4.0wv"
-          />
-        </Box>
-        <Box position="absolute" right="0" borderRadius="20px">
-          {windowWidth > 950 ? (
-            // Render buttons when screen width is less than 950 pixels
-            <Flex>
-              <Button as={Link} to="/Home" style={styles.button}>
-                Home
-              </Button>
-              <Button as={Link} to="/Projects" style={styles.button}>
-                Projects
-              </Button>
-              <Button as={Link} to="/Team" style={styles.button}>
-                Team
-              </Button>
-              <Button as={Link} to="/Blog" style={styles.button}>
-                Blog
-              </Button>
-              <Button as={Link} to="/Opportunities" style={styles.button}>
-                Opportunities
-              </Button>
-              <Button as={Link} to="/Contact" style={styles.button}>
-                Contact Us
-              </Button>
-            </Flex>
-          ) : (
-            // Render menu list when screen width is 950 pixels or more
-            <Menu>
-              <MenuButton
-                style={styles.button}
-                as={IconButton}
-                aria-label="Options"
-                icon={
-                  isOpen ? (
-                    <CloseIcon boxSize={30} color="white" />
-                  ) : (
-                    <HamburgerIcon boxSize={45} color="white" />
-                  )
-                }
-                _expanded={{ outline: 'none', boxShadow: 'none' }}
-                _focus={{ outline: 'none', boxShadow: 'none' }}
-                onClick={toggleMenu}
-                transform={isOpen ? 'rotate(180deg)' : ''}
+      <Box position="fixed" top={0} left={0} width="100%" zIndex={10}>
+        <Flex
+            bg="#FDDC7E"
+            color="white"
+            alignItems="center"
+            height="70px"
+            ref={navbarRef}
+        >
+          <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
+            <a href="/">
+              {' '}
+              <Image
+                  src={process.env.PUBLIC_URL + '/vds-logo.PNG'}
+                  alt="Logo"
+                  boxSize="80px"
+                  width="4.0wv"
               />
-              <Box overflow="hidden">
-                <MenuList style={styles.list} bg="#FDDC6A">
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Home" style={styles.link}>
-                      Home
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Projects" style={styles.link}>
-                      Projects
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Team" style={styles.link}>
-                      Team
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Blog" style={styles.link}>
-                      Blog
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Opportunities" style={styles.link}>
-                      Opportunities
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Contact" style={styles.link}>
-                      Contact Us
-                    </Link>
-                  </MenuItem>
-                </MenuList>
-              </Box>
-            </Menu>
-          )}
-        </Box>
-      </Flex>
-    </Box>
+            </a>
+          </Box>
+          <Box position="absolute" right="0" borderRadius="20px">
+            {windowWidth > 950 ? (
+                // Render buttons when screen width is less than 950 pixels
+                <Flex>
+                  <Button as={Link} to="/Home" style={styles.button}>
+                    Home
+                  </Button>
+                  <Button as={Link} to="/Projects" style={styles.button}>
+                    Projects
+                  </Button>
+                  <Button as={Link} to="/Team" style={styles.button}>
+                    Team
+                  </Button>
+                  <Button as={Link} to="/Blog" style={styles.button}>
+                    Blog
+                  </Button>
+                  <Button as={Link} to="/Opportunities" style={styles.button}>
+                    Opportunities
+                  </Button>
+                  <Button as={Link} to="/Contact" style={styles.button}>
+                    Contact Us
+                  </Button>
+                </Flex>
+            ) : (
+                // Render menu list when screen width is 950 pixels or more
+                <Menu>
+                  <MenuButton
+                      style={styles.button}
+                      as={IconButton}
+                      aria-label="Options"
+                      icon={
+                        isOpen ? (
+                            <CloseIcon boxSize={30} color="white" />
+                        ) : (
+                            <HamburgerIcon boxSize={45} color="white" />
+                        )
+                      }
+                      _expanded={{ outline: 'none', boxShadow: 'none' }}
+                      _focus={{ outline: 'none', boxShadow: 'none' }}
+                      onClick={toggleMenu}
+                      transform={isOpen ? 'rotate(180deg)' : ''}
+                  />
+                  <Box overflow="hidden">
+                    <MenuList style={styles.list} bg="#FDDC6A">
+                      <MenuItem
+                          style={styles.items}
+                          _hover={{ bg: '#2F2F2F', color: 'white' }}
+                      >
+                        <Link to="/Home" style={styles.link}>
+                          Home
+                        </Link>
+                      </MenuItem>
+                      <MenuItem
+                          style={styles.items}
+                          _hover={{ bg: '#2F2F2F', color: 'white' }}
+                      >
+                        <Link to="/Projects" style={styles.link}>
+                          Projects
+                        </Link>
+                      </MenuItem>
+                      <MenuItem
+                          style={styles.items}
+                          _hover={{ bg: '#2F2F2F', color: 'white' }}
+                      >
+                        <Link to="/Team" style={styles.link}>
+                          Team
+                        </Link>
+                      </MenuItem>
+                      <MenuItem
+                          style={styles.items}
+                          _hover={{ bg: '#2F2F2F', color: 'white' }}
+                      >
+                        <Link to="/Blog" style={styles.link}>
+                          Blog
+                        </Link>
+                      </MenuItem>
+                      <MenuItem
+                          style={styles.items}
+                          _hover={{ bg: '#2F2F2F', color: 'white' }}
+                      >
+                        <Link to="/Opportunities" style={styles.link}>
+                          Opportunities
+                        </Link>
+                      </MenuItem>
+                      <MenuItem
+                          style={styles.items}
+                          _hover={{ bg: '#2F2F2F', color: 'white' }}
+                      >
+                        <Link to="/Contact" style={styles.link}>
+                          Contact Us
+                        </Link>
+                      </MenuItem>
+                    </MenuList>
+                  </Box>
+                </Menu>
+            )}
+          </Box>
+        </Flex>
+      </Box>
   );
 };
 
