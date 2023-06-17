@@ -4,132 +4,113 @@ import {
   Heading,
   Box,
   SimpleGrid,
-  Tooltip,
   VStack,
   theme,
   Container,
-  Card,
-  CardBody,
   Center,
 } from '@chakra-ui/react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 import adaline from '../assets/images/adaline.png';
 import aditya from '../assets/images/aditya.jpeg';
 import brooke from '../assets/images/brooke.png';
 
-const exec = [
+// all member info
+const allMembers = [
   {
-    name: 'Adaline',
+    name: 'Adaline Leong',
     image: adaline,
-    funFact: 'I go to Vandy',
+    bio: 'I own 10+ Rubiks cubes and I am passionate about data-driven solutions!',
     pos: 'President',
+    linkedIn: 'https://www.linkedin.com/in/jiayinleong/',
+    github: 'https://github.com/AdalineL',
   },
   {
-    name: 'Brooke',
+    name: 'Brooke Stevens',
     image: brooke,
-    funFact: 'I have perfect pitch!',
+    bio: 'I have perfect pitch!',
     pos: 'Treasurer',
+    linkedIn: 'https://www.linkedin.com/in/jiayinleong/',
+    github: 'https://github.com/brookemstevens',
+  },
+  {
+    name: 'Aditya Shrey',
+    image: aditya,
+    bio: 'I like dogs',
+    pos: 'member',
+    linkedIn: 'https://www.linkedin.com/in/jiayinleong/',
+    github: 'https://github.com/aditya-shrey',
   },
 ];
 
-const members = [{ name: 'aditya', image: aditya, funFact: 'I like dogs' }];
+// function for on hover text change effect
+export function Inside({ src, bio, name }) {
+  const [isHovered, setIsHovered] = useState(false);
+  const handleHover = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  return (
+    <Box
+      onMouseEnter={handleHover}
+      onMouseLeave={handleMouseLeave}
+      style={styles.page}
+    >
+      {!isHovered && (
+        <Box>
+          <Center>
+            <img src={src} style={styles.inside} alt={name}></img>
+          </Center>
+        </Box>
+      )}
+      {isHovered && (
+        <Box>
+          <div style={styles.text}>{bio && <span>{bio}</span>}</div>
+        </Box>
+      )}
+    </Box>
+  );
+}
 
 const Team = () => {
-  function HoverImage({ src, name, pos, about }) {
-    /*for copying images right click and select "copy image addreess"*/
-    const [isHovered, setIsHovered] = useState(false);
-    const handleHover = () => {
-      setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovered(false);
-    };
-
-    return (
-      <Box
-        onMouseEnter={handleHover}
-        onMouseLeave={handleMouseLeave}
-        style={styles.page}
-      >
-        {!isHovered && <Box as="img" src={src} width="100%" height="100%" />}
-        {isHovered && (
-          <Tooltip placement="top" isDisabled>
-            <Box style={styles.sections}>
-              <div>
-                {name && (
-                  <span>
-                    {'Name: '}
-                    {name}
-                    <br />
-                  </span>
-                )}
-                {pos && (
-                  <span>
-                    {'Position: '}
-                    {pos}
-                    <br />
-                  </span>
-                )}
-                {about && (
-                  <span>
-                    {'About: '}
-                    {about}
-                  </span>
-                )}
-              </div>
-            </Box>
-          </Tooltip>
-        )}
-      </Box>
-    );
-  }
-
   return (
     <ChakraProvider theme={theme}>
       <Container id="main">
-        <Heading>The Team</Heading>
+        <Heading marginTop="150px" fontFamily="sans-serif" marginLeft="36%">
+          Our Team
+        </Heading>
 
         <Box marginTop="50px">
           <VStack spacing={10} align="stretch">
-            <Heading size="md">Exec</Heading>
-            <SimpleGrid columns={[2, null, 3]} spacing="40px">
-              {exec.map((member, index) => (
-                <Card key={index} height="100%">
-                  <Center>
-                    <CardBody mt={-10}>
-                      <HoverImage
-                        src={member.image}
-                        name={member.name}
-                        pos={member.pos}
-                        about={member.funFact}
-                      />
-                    </CardBody>
-                  </Center>
-                </Card>
+            <SimpleGrid columns={[2, null, 3]} spacing="100px">
+              {allMembers.map((member, index) => (
+                <div>
+                  <Box key={index} style={styles.outside}>
+                    <Inside
+                      src={member.image}
+                      bio={member.bio}
+                      name={member.name}
+                    />
+                  </Box>
+                  <div style={styles.words}>
+                    <p style={styles.name}>{member.name}</p>
+                    <p style={styles.position}>{member.pos}</p>
+                  </div>
+                  <div style={styles.icons}>
+                    <a href={member.linkedIn}>
+                      <FaLinkedin style={styles.iconLeft} />
+                    </a>
+                    <a href={member.github}>
+                      <FaGithub style={styles.iconRight} />
+                    </a>
+                  </div>
+                </div>
               ))}
             </SimpleGrid>
-            {/*This is the grid for Members*/}
-            <Heading>Members</Heading>
-            <SimpleGrid columns={[2, null, 3]} spacing="40px">
-              {members.map((member, index) => (
-                <Card key={index}>
-                  <Center>
-                    <CardBody mt={-10}>
-                      <HoverImage
-                        src={member.image}
-                        name={member.name}
-                        pos={member.pos}
-                        about={member.funFact}
-                      />
-                    </CardBody>
-                  </Center>
-                </Card>
-              ))}
-            </SimpleGrid>
-            {/* <Heading>Past Members</Heading>{' '}
-            {/*This is the grid for past members*/}
-            {/* <SimpleGrid columns={3} spacing={5}></SimpleGrid> */}
           </VStack>
         </Box>
       </Container>
@@ -139,6 +120,7 @@ const Team = () => {
 
 export default Team;
 
+// all styling
 let styles = {
   page: {
     marginTop: '50px',
@@ -146,18 +128,59 @@ let styles = {
     height: '200px',
     position: 'relative',
   },
-  sections: {
-    width: '100%',
-    height: '100%',
-    color: 'black',
-    bg: 'gray.200',
-    display: 'flex',
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    p: '6px',
-    maxWidth: '100%', // Set the maximum width for the text box
-    wordBreak: 'break-word', // Enable word wrapping
-    whiteSpace: 'normal', // Allow text to wrap to the next line
-    overflowWrap: 'break-word', // Enable word wrapping for long words
+  profile: {
+    height: '200px',
+    width: '200px',
+    borderRadius: '50%',
+  },
+  inside: {
+    margin: '8px 0 0 10px',
+    borderRadius: '50%',
+    width: 150,
+    height: 170,
+    objectFit: 'cover',
+  },
+  outside: {
+    borderRadius: '50%',
+    width: 160,
+    height: 186,
+    background: '#FDDC7E',
+    boxShadow: '2px 3px 5px #999',
+  },
+  text: {
+    borderRadius: 12,
+    font: '15px/13px Helvetica, Verdana, Tahoma',
+    height: 20,
+    minWidth: 14,
+    padding: '65px 5px 5px 25px',
+    textAlign: 'center',
+  },
+  iconRight: {
+    height: '30px',
+    width: '30px',
+    display: 'inline-block',
+  },
+  iconLeft: {
+    height: '30px',
+    marginRight: '5px',
+    width: '30px',
+    display: 'inline-block',
+  },
+  icons: {
+    marginLeft: '40%',
+  },
+  words: {
+    width: '300px',
+  },
+  name: {
+    marginTop: '10px',
+    fontSize: '25px',
+    fontFamily: 'sans-serif',
+  },
+  position: {
+    fontSize: '15px',
+    fontFamily: 'sans-serif',
+    marginLeft: '18%',
+    marginBottom: '5px',
   },
 };
