@@ -13,7 +13,8 @@ import {
   Heading,
   Text,
 } from '@chakra-ui/react';
-import InstaFeed from '../Instagramposts';
+import InstaPosts from '../components/Instagramposts';
+import BarsAnimation from '../components/BarsAnimation';
 import theme from '../theme';
 import backgroundImage from '../assets/background/datascience_background5.png';
 import backgroundImage2 from '../assets/background/datascience_background1.png';
@@ -44,7 +45,7 @@ export default function Home() {
       ([entry]) => {
         setIsVisible(entry.isIntersecting);
       },
-      { threshold: 0.5 }
+      { threshold: 0.3 }
     );
 
     if (ref.current) {
@@ -96,6 +97,15 @@ export default function Home() {
               width={'98.7239551vw'}
             />
           </div>
+          <Flex
+              justifyContent={'space-around'}
+              alignItems={'flex-end'}
+              width={'70%'}
+              position={'absolute'} // set to relative
+              top={'50vh'}
+          >
+            {BarsAnimation(25, -1)}
+          </Flex>
           <div style={{ marginBottom: '35vh' }}>
             <Heading size={'s'}>Welcome to the</Heading>
             <Heading>Vanderbilt Data Science Club</Heading>
@@ -123,7 +133,7 @@ export default function Home() {
               transition="opacity 1s ease-in-out"
             >
               <Heading size={'lg'}>Our Mission</Heading>
-              <Text>
+              <Text marginLeft = {4} >
                 Vanderbilt Data Science aims to empower students from all
                 experience levels to learn data science, artificial intelligence
                 (AI), and machine learning (ML) through a project-based approach
@@ -135,10 +145,19 @@ export default function Home() {
               </Text>
             </Box>
           </Flex>
-          <Box height={'100vh'} bgColor={'white'}></Box>
+          <Box minHeight={'30vh'} bgColor={'white'}>
+          </Box>
         </VStack>
       </Flex>
-      <InstaFeed />
+        <Box
+            bgColor={'white'}
+            justifyContent="center"
+            flexDirection="column"
+            alignItems="center"
+        >
+            <Heading marginLeft={10}> Check Our Instagram </Heading>
+            <InstaPosts/>
+        </Box>
     </ChakraProvider>
   );
 }
