@@ -65,7 +65,6 @@ const Navbar = () => {
       >
         <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
           <a href="/">
-            {' '}
             <Image
               src={process.env.PUBLIC_URL + '/vds-logo.PNG'}
               alt="Logo"

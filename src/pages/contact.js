@@ -37,7 +37,7 @@ export const Contact = () => {
       );
   };
   return (
-    <Box as="form" ref={form} onSubmit={sendEmail} style={styles.page}>
+    <Box as="form" ref={form} onSubmit={sendEmail} style={styles.outside}>
       {isSubmitted ? (
         <Heading as="h3" size="xl">
           Your form was successfully submitted. We will get back to you shortly.
@@ -118,14 +118,14 @@ export const Contact = () => {
 export default Contact;
 
 let styles = {
-  page: {
-    marginTop: '50px',
-    maxWidth: '800px',
-    margin: '15px',
+  outside: {
+    height: '540px',
+    width: '500px',
+    marginTop: '150px',
+    fontFamily: 'sans-serif',
+    marginLeft: '35%',
+    background: '#FDDC7E',
+    boxShadow: '2px 3px 5px #999',
     padding: '20px',
-    boxShadow: 'md',
-    borderRadius: 'md',
-    borderColor: 'black',
-    borderWidth: '1px',
   },
 };

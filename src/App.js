@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from './nav/menuBar.js';
+import Navbar from './sections/Navbar.js';
+import Footer from './sections/Footer.js';
 import Home from './pages/home.js';
 import Projects from './pages/projects.js';
 import Team from './pages/team.js';
@@ -34,6 +35,7 @@ function App() {
         <Route path="/nash0" element={<NashZeroPg />} />
         <Route path="/ancientartifacts" element={<AncientArtifactsPg />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   );
 }
