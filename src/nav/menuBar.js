@@ -55,7 +55,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <Box position="fixed" top={0} left={0} width="100%">
+    <Box position="fixed" top={0} left={0} width="100%" zIndex={10}>
       <Flex
         bg="#FDDC7E"
         color="white"
@@ -64,12 +64,15 @@ const Navbar = () => {
         ref={navbarRef}
       >
         <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
-          <Image
-            src={process.env.PUBLIC_URL + '/vds-logo.PNG'}
-            alt="Logo"
-            boxSize="80px"
-            width="4.0wv"
-          />
+          <a href="/">
+            {' '}
+            <Image
+              src={process.env.PUBLIC_URL + '/vds-logo.PNG'}
+              alt="Logo"
+              boxSize="80px"
+              width="4.0wv"
+            />
+          </a>
         </Box>
         <Box position="absolute" right="0" borderRadius="20px">
           {windowWidth > 950 ? (
