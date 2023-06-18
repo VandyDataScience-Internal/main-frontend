@@ -38,8 +38,8 @@ export const Contact = () => {
       );
   };
   return (
-    <Container height="82vw">
-      <Box as="form" ref={form} onSubmit={sendEmail} style={styles.outside}>
+    <Container height="70%" marginBottom={60}>
+      <Box as="form" ref={form} onSubmit={sendEmail} style={styles.yellowBox}>
         {isSubmitted ? (
           <Heading as="h3" size="xl">
             Your form was successfully submitted. We will get back to you
@@ -122,7 +122,7 @@ export const Contact = () => {
 export default Contact;
 
 let styles = {
-  outside: {
+  yellowBox: {
     height: '540px',
     width: '500px',
     marginTop: '150px',

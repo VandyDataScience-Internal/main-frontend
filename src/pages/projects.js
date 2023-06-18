@@ -9,13 +9,13 @@ import {
 } from 'react-router-dom';
 
 // Individual Pages
-import CentParkPg from '../assets/projectinfo/centennialpark';
-import EmailAssistPg from '../assets/projectinfo/emailAssist';
-import GirlScoutsPg from '../assets/projectinfo/girlscouts';
-import LandTrustPg from '../assets/projectinfo/landtrust';
-import NashZeroPg from '../assets/projectinfo/nash0';
-import AncientArtifactsPg from '../assets/projectinfo/ancientArtifacts';
-import ProjectsMain from '../assets/projectinfo/projectmain';
+import CentParkPg from '../components/projectinfo/centennialpark';
+import EmailAssistPg from '../components/projectinfo/emailAssist';
+import GirlScoutsPg from '../components/projectinfo/girlscouts';
+import LandTrustPg from '../components/projectinfo/landtrust';
+import NashZeroPg from '../components/projectinfo/nash0';
+import AncientArtifactsPg from '../components/projectinfo/ancientArtifacts';
+import ProjectsMain from '../components/projectinfo/projectmain';
 import { Box } from '@chakra-ui/react';
 
 const Projects = () => {

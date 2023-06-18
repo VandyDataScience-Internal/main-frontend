@@ -22,7 +22,7 @@ export function SocialButton({ children, label, href }) {
 const Footer = () => {
   return (
     <Box bg="grey" bottom="0" left="0" right="0">
-      <Container height="80px">
+      <Container height="20%">
         <a href="/">
           <Image
             filter="invert(1)"
@@ -34,7 +34,13 @@ const Footer = () => {
             width="140px"
           />
         </a>
-        <Stack display="in-line" position="relative" right="0" paddingLeft="80%" top="-25px">
+        <Stack
+          display="in-line"
+          position="relative"
+          right="0"
+          paddingLeft="80%"
+          top="-25px"
+        >
           <SocialButton label={'Instagram'} href={'#'}>
             <SiInstagram />
           </SocialButton>
