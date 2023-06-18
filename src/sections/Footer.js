@@ -4,12 +4,11 @@ import {
   Container,
   Stack,
   Image,
-  useColorModeValue,
   VisuallyHidden,
 } from '@chakra-ui/react';
 
 import { SiLinkedin, SiGmail, SiInstagram } from 'react-icons/si';
-import { ReactNode } from 'react';
+// import { ReactNode } from 'react';
 
 export function SocialButton({ children, label, href }) {
   return (
@@ -23,18 +22,25 @@ export function SocialButton({ children, label, href }) {
 const Footer = () => {
   return (
     <Box bg="grey" bottom="0" left="0" right="0">
-      <Container>
+      <Container height="20%">
         <a href="/">
           <Image
             filter="invert(1)"
             src={process.env.PUBLIC_URL + '/vds-logo.PNG'}
             alt="Logo"
-            boxSize="80px"
-            width="4.0wv"
-            paddingTop={15}
+            position="relative"
+            left="15px"
+            height="80px"
+            width="140px"
           />
         </a>
-        <Stack display="in-line" right="0" paddingLeft="80%">
+        <Stack
+          display="in-line"
+          position="relative"
+          right="0"
+          paddingLeft="80%"
+          top="-25px"
+        >
           <SocialButton label={'Instagram'} href={'#'}>
             <SiInstagram />
           </SocialButton>

@@ -78,8 +78,8 @@ export function Inside({ src, bio, name }) {
 
 const Team = () => {
   return (
-    <ChakraProvider theme={theme}>
-      <Container id="main">
+    <ChakraProvider>
+      <Container marginBottom={60}>
         <Heading marginTop="150px" fontFamily="sans-serif" marginLeft="36%">
           Our Team
         </Heading>
@@ -125,8 +125,8 @@ let styles = {
   page: {
     marginTop: '50px',
     width: '150px',
-    height: '200px',
     position: 'relative',
+    height: '200px',
   },
   profile: {
     height: '200px',

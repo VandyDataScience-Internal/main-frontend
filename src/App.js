@@ -7,14 +7,15 @@ import Team from './pages/team.js';
 import Blog from './pages/blog.js';
 import Contact from './pages/contact.js';
 
-import CentParkPg from './assets/projectinfo/centennialpark';
-import EmailAssistPg from './assets/projectinfo/emailAssist';
-import GirlScoutsPg from './assets/projectinfo/girlscouts';
-import LandTrustPg from './assets/projectinfo/landtrust';
-import NashZeroPg from './assets/projectinfo/nash0';
-import AncientArtifactsPg from './assets/projectinfo/ancientArtifacts';
-import ProjectsMain from './assets/projectinfo/projectmain';
+import CentParkPg from './components/projectinfo/centennialpark.js';
+import EmailAssistPg from './components/projectinfo/emailAssist.js';
+import GirlScoutsPg from './components/projectinfo/girlscouts.js';
+import LandTrustPg from './components/projectinfo/landtrust.js';
+import NashZeroPg from './components/projectinfo/nash0.js';
+import AncientArtifactsPg from './components/projectinfo/ancientArtifacts.js';
+import ProjectsMain from './components/projectinfo/projectmain.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './css/app.css';
 
 function App() {
   return (

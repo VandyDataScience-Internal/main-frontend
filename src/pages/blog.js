@@ -1,6 +1,17 @@
 import React from 'react';
 import { ChakraProvider, Heading, theme, Box, Text } from '@chakra-ui/react';
 
+/*
+* Blog
+* 1) Make a card template that on has an image on the front of the current PDF
+    -> The cards will take in one parameters of the PDF
+* 2) Make folder with the Blog assets
+* 3) Make the 6
+* 3) Make a map/array that puts s
+*
+*
+*/
+
 function Blog() {
   return (
     <ChakraProvider>

@@ -19,11 +19,11 @@ import {
 } from '@chakra-ui/react';
 
 // Import Images
-import centParkImg from '../images/consprkcent.png';
-import girlScoutImg from '../images/girlscouts.png';
-import landTrustImg from '../images/landtrust.png';
-import nashZeroImg from '../images/nash0.png';
-import vdsLogoImg from '../images/vdslogo.png';
+import centParkImg from '../../assets/images/consprkcent.png';
+import girlScoutImg from '../../assets/images/girlscouts.png';
+import landTrustImg from '../../assets/images/landtrust.png';
+import nashZeroImg from '../../assets/images/nash0.png';
+import vdsLogoImg from '../../assets/images/vdslogo.png';
 
 const curProject = [
   {
