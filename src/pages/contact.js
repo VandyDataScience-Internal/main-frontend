@@ -9,6 +9,7 @@ import {
   Button,
   Heading,
   Tooltip,
+  Container,
 } from '@chakra-ui/react';
 
 export const Contact = () => {
@@ -37,81 +38,84 @@ export const Contact = () => {
       );
   };
   return (
-    <Box as="form" ref={form} onSubmit={sendEmail} style={styles.outside}>
-      {isSubmitted ? (
-        <Heading as="h3" size="xl">
-          Your form was successfully submitted. We will get back to you shortly.
-          <br />
-          Thank you!
-        </Heading>
-      ) : (
-        <>
-          <FormControl marginBottom="15px">
-            <Heading as="h1" size="xl" marginBottom="5px">
-              Contact Us
-            </Heading>
-            <p marginBottom="15px">
-              Please fill out this form and we will contact you shortly.
-              <br></br>Thank you!
-            </p>
-          </FormControl>
-          <FormControl marginBottom="15px">
-            <FormLabel>
-              Name{' '}
-              <Tooltip label="This is a required field">
-                <span style={{ color: 'red', cursor: 'pointer' }}>*</span>
-              </Tooltip>
-            </FormLabel>
-            <Input
-              placeholder="Type in your name..."
-              type="text"
-              required
-              name="user_name"
-            />
-          </FormControl>
-          <FormControl marginBottom="15px">
-            <FormLabel>
-              Email{' '}
-              <Tooltip label="This is a required field">
-                <span style={{ color: 'red', cursor: 'pointer' }}>*</span>
-              </Tooltip>
-            </FormLabel>
-            <Input
-              placeholder="Type in your email.."
-              type="email"
-              required
-              name="user_email"
-            />
-          </FormControl>
-          <FormControl marginBottom="15px">
-            <FormLabel>Subject</FormLabel>
-            <Input
-              placeholder="Enter your message here..."
-              type="text"
-              name="user_subject"
-            />
-          </FormControl>
-          <FormControl marginBottom="15px">
-            <FormLabel>
-              Message{' '}
-              <Tooltip label="This is a required field">
-                <span style={{ color: 'red', cursor: 'pointer' }}>*</span>
-              </Tooltip>
-            </FormLabel>
-            <Textarea
-              placeholder="Enter your message here..."
-              required
-              name="message"
-              rows={10}
-              cols={50}
-            />
-          </FormControl>
-          <Button marginBottom="15px" colorScheme="teal" type="submit" mt={4}>
-            Send
-          </Button>
-        </>
-      )}
-    </Box>
+    <Container height="82vw">
+      <Box as="form" ref={form} onSubmit={sendEmail} style={styles.outside}>
+        {isSubmitted ? (
+          <Heading as="h3" size="xl">
+            Your form was successfully submitted. We will get back to you
+            shortly.
+            <br />
+            Thank you!
+          </Heading>
+        ) : (
+          <>
+            <FormControl marginBottom="15px">
+              <Heading as="h1" size="xl" marginBottom="5px">
+                Contact Us
+              </Heading>
+              <p marginBottom="15px">
+                Please fill out this form and we will contact you shortly.
+                <br></br>Thank you!
+              </p>
+            </FormControl>
+            <FormControl marginBottom="15px">
+              <FormLabel>
+                Name{' '}
+                <Tooltip label="This is a required field">
+                  <span style={{ color: 'red', cursor: 'pointer' }}>*</span>
+                </Tooltip>
+              </FormLabel>
+              <Input
+                placeholder="Type in your name..."
+                type="text"
+                required
+                name="user_name"
+              />
+            </FormControl>
+            <FormControl marginBottom="15px">
+              <FormLabel>
+                Email{' '}
+                <Tooltip label="This is a required field">
+                  <span style={{ color: 'red', cursor: 'pointer' }}>*</span>
+                </Tooltip>
+              </FormLabel>
+              <Input
+                placeholder="Type in your email.."
+                type="email"
+                required
+                name="user_email"
+              />
+            </FormControl>
+            <FormControl marginBottom="15px">
+              <FormLabel>Subject</FormLabel>
+              <Input
+                placeholder="Enter your message here..."
+                type="text"
+                name="user_subject"
+              />
+            </FormControl>
+            <FormControl marginBottom="15px">
+              <FormLabel>
+                Message{' '}
+                <Tooltip label="This is a required field">
+                  <span style={{ color: 'red', cursor: 'pointer' }}>*</span>
+                </Tooltip>
+              </FormLabel>
+              <Textarea
+                placeholder="Enter your message here..."
+                required
+                name="message"
+                rows={10}
+                cols={50}
+              />
+            </FormControl>
+            <Button marginBottom="15px" colorScheme="teal" type="submit" mt={4}>
+              Send
+            </Button>
+          </>
+        )}
+      </Box>
+    </Container>
   );
 };
 
