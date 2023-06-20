@@ -3,38 +3,23 @@ import {
   ChakraProvider,
   Box,
   Flex,
-  HStack,
   VStack,
-  Link,
-  IconButton,
-  useDisclosure,
-  useColorModeValue,
   Image,
   Heading,
   Text,
 } from '@chakra-ui/react';
 import InstaPosts from '../components/Instagramposts';
 import BarsAnimation from '../components/BarsAnimation';
+import Carousel from '../components/Carousel';
 import theme from '../theme';
 import backgroundImage from '../assets/background/datascience_background5.png';
 import backgroundImage2 from '../assets/background/datascience_background1.png';
-import logo from '../assets/background/logo.png';
 
-const Links = ['Dashboard', 'Projects', 'Team'];
-const NavLink = ({ children }) => (
-  <Link
-    px={2}
-    py={1}
-    rounded={'md'}
-    _hover={{
-      textDecoration: 'underline',
-      bg: useColorModeValue('gray.200', 'gray.700'),
-    }}
-    href={'#'}
-  >
-    {children}
-  </Link>
-);
+import image1 from '../assets/images/consprkcent.png';
+import image2 from '../assets/images/girlscouts.png';
+import image3 from '../assets/images/landtrust.png';
+import image4 from '../assets/images/nash0.png';
+import image5 from '../assets/images/dsi-logo.png';
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,6 +44,14 @@ export default function Home() {
     };
   }, []);
 
+  const images = [
+    { id: '1', url: image1, href: '/centennialpark' },
+    { id: '2', url: image2, href: '/girlscouts' },
+    { id: '3', url: image3, href: '/landtrusttn' },
+    { id: '4', url: image4, href: '/nash0' },
+    { id: '5', url: image5, href: '/dsi' },
+  ];
+
   return (
     <ChakraProvider theme={theme}>
       <Flex
@@ -68,27 +61,13 @@ export default function Home() {
         fontSize="xl"
       >
         <VStack spacing={8}>
-          <Box bg="white.100" px={4} borderBottom={'1px solid #f0ebf1'}>
-            <Flex
-              h={16}
-              alignItems="center"
-              justifyContent="space-between"
-              width={'96.22395vw'}
-            >
-              <Image src={logo} alt="Logo" h="20vh" mr={8} mt={'2vh'} />{' '}
-              {/* adjust height and margin as needed */}
-              <HStack
-                as="nav"
-                spacing={4}
-                display={{ base: 'none', md: 'flex' }}
-              >
-                {Links.map(link => (
-                  <NavLink key={link}>{link}</NavLink>
-                ))}
-              </HStack>
-            </Flex>
-          </Box>
-          <div style={{ marginTop: '0', overflow: 'hidden' }}>
+          <div
+            style={{
+              marginTop: '10vh',
+              overflow: 'hidden',
+              position: 'relative',
+            }}
+          >
             <Image
               src={backgroundImage}
               objectFit="cover"
@@ -98,18 +77,26 @@ export default function Home() {
             />
           </div>
           <Flex
-              justifyContent={'space-around'}
-              alignItems={'flex-end'}
-              width={'70%'}
-              position={'absolute'} // set to relative
-              top={'50vh'}
+            justifyContent={'space-around'}
+            alignItems={'flex-end'}
+            width={'70%'}
+            position={'absolute'} // set to relative
+            top={'50vh'}
           >
             {BarsAnimation(25, -1)}
           </Flex>
-          <div style={{ marginBottom: '35vh' }}>
+          <div style={{ marginBottom: '12vh' }}>
             <Heading size={'s'}>Welcome to the</Heading>
             <Heading>Vanderbilt Data Science Club</Heading>
           </div>
+          <Heading as="h2" size="lg" pb={'5vw'} pl={'7vw'}>
+            <Box as="span" display="inline-block">
+              <Text as="span" pb="5px">
+                Who we've partnered with!
+              </Text>
+            </Box>
+          </Heading>
+          <Carousel images={images} />
           <Flex>
             <Box width={'45vw'} display="flex" justifyContent="center">
               <Image
@@ -117,7 +104,7 @@ export default function Home() {
                 src={backgroundImage2}
                 fallbackSrc="https://via.placeholder.com/150"
                 opacity={isVisible ? 1 : 0}
-                transition="opacity 1s ease-in-out"
+                transition="opacity 0.4s ease-in-out"
                 objectFit={'cover'}
                 height={'40vh'}
               />
@@ -133,7 +120,7 @@ export default function Home() {
               transition="opacity 1s ease-in-out"
             >
               <Heading size={'lg'}>Our Mission</Heading>
-              <Text marginLeft = {4} >
+              <Text marginLeft={4}>
                 Vanderbilt Data Science aims to empower students from all
                 experience levels to learn data science, artificial intelligence
                 (AI), and machine learning (ML) through a project-based approach
@@ -145,19 +132,19 @@ export default function Home() {
               </Text>
             </Box>
           </Flex>
-          <Box minHeight={'30vh'} bgColor={'white'}>
-          </Box>
+          <Box minHeight={'20vh'} bgColor={'white'} />
         </VStack>
       </Flex>
-        <Box
-            bgColor={'white'}
-            justifyContent="center"
-            flexDirection="column"
-            alignItems="center"
-        >
-            <Heading marginLeft={10}> Check Our Instagram </Heading>
-            <InstaPosts/>
-        </Box>
+
+      <Box
+        bgColor={'white'}
+        justifyContent="center"
+        flexDirection="column"
+        alignItems="center"
+      >
+        <Heading marginLeft={10}> Check Our Instagram </Heading>
+        <InstaPosts />
+      </Box>
     </ChakraProvider>
   );
 }

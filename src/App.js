@@ -14,6 +14,9 @@ import LandTrustPg from './components/projectinfo/landtrust.js';
 import NashZeroPg from './components/projectinfo/nash0.js';
 import AncientArtifactsPg from './components/projectinfo/ancientArtifacts.js';
 import ProjectsMain from './components/projectinfo/projectmain.js';
+import BlogMain from './components/blogPages/blogMain.js';
+import BlogPageOne from './components/blogPages/blogPageOne.js';
+import BlogPageTwo from './components/blogPages/blogPageTwo.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './css/app.css';
 
@@ -35,6 +38,9 @@ function App() {
         <Route path="/landtrusttn" element={<LandTrustPg />} />
         <Route path="/nash0" element={<NashZeroPg />} />
         <Route path="/ancientartifacts" element={<AncientArtifactsPg />} />
+        <Route path="/" element={<BlogMain />} />
+        <Route path="/blogPageOne" element={<BlogPageOne />} />
+        <Route path="/blogPageTwo" element={<BlogPageTwo />} />
       </Routes>
       <Footer />
     </BrowserRouter>
