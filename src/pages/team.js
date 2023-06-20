@@ -14,6 +14,8 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import adaline from '../assets/images/adaline.png';
 import aditya from '../assets/images/aditya.jpeg';
 import brooke from '../assets/images/brooke.png';
+import naol from '../assets/images/naol.png';
+
 
 // all member info
 const allMembers = [
@@ -41,6 +43,14 @@ const allMembers = [
     linkedIn: 'https://www.linkedin.com/in/jiayinleong/',
     github: 'https://github.com/aditya-shrey',
   },
+  {
+    name: 'Naol Wordoffa',
+    image: naol,
+    bio: 'I can speak 4 languages!',
+    pos: 'member',
+    linkedIn: 'https://www.linkedin.com/in/naol-wordoffa-61500b221/',
+    github: 'https://github.com/nwordoffa3',
+  }
 ];
 
 // function for on hover text change effect

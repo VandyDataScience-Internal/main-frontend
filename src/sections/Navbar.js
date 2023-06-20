@@ -60,7 +60,7 @@ const Navbar = () => {
         bg="#FDDC7E"
         color="white"
         alignItems="center"
-        height="70px"
+        height="10vh"
         ref={navbarRef}
       >
         <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
