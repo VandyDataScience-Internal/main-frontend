@@ -23,9 +23,10 @@ import centParkImg from '../../assets/images/consprkcent.png';
 import girlScoutImg from '../../assets/images/girlscouts.png';
 import landTrustImg from '../../assets/images/landtrust.png';
 import nashZeroImg from '../../assets/images/nash0.png';
-import vdsLogoImg from '../../assets/images/vdslogo.png';
+import aalogo from '../../assets/images/ancient-artifacts-logo.png';
+import ealogo from '../../assets/images/emailAssistLogo.png';
 
-const curProject = [
+const pastProject = [
   {
     title: 'Centennial Park Conservancy',
     link: '/centennialpark',
@@ -46,14 +47,8 @@ const curProject = [
     link: '/nash0',
     image: nashZeroImg,
   },
-  { title: 'Ancient Artifacts', link: '/ancientartifacts', image: vdsLogoImg },
-  { title: 'Email Assist', link: '/emailassist', image: vdsLogoImg },
-];
-
-const pastProject = [
-  { title: 'Project 1', link: '/project1', image: vdsLogoImg },
-  { title: 'Project 2', link: '/project1', image: vdsLogoImg },
-  { title: 'Project 3', link: '/project1', image: vdsLogoImg },
+  { title: 'Ancient Artifacts', link: '/ancientartifacts', image: aalogo },
+  { title: 'Email Assist', link: '/emailassist', image: ealogo },
 ];
 
 const ProjectsMain = () => {
@@ -64,12 +59,21 @@ const ProjectsMain = () => {
           <Text fontFamily="Open Sans">Current Projects</Text>
         </Center>
       </Heading>
+      <Center>
+        <Text fontFamily="Open Sans">Coming soon!</Text>
+      </Center>
+
+      <Heading m={10} as="h1" size="3xl">
+        <Center>
+          <Text fontFamily="Open Sans">Past Projects</Text>
+        </Center>
+      </Heading>
       <SimpleGrid
         m={10}
         spacing={10}
-        templateColumns="repeat(auto-fill, minmax(400px, 2fr))"
+        templateColumns="repeat(auto-fill, minmax(300px, 2fr))"
       >
-        {curProject.map((project, index) => (
+        {pastProject.map((project, index) => (
           <Link href={project.link} _hover={{ textDecoration: 'none' }}>
             <Card key={index} height="100%">
               <CardHeader>
@@ -82,31 +86,6 @@ const ProjectsMain = () => {
                   </Center>
                 </CardBody>
               </Center>
-            </Card>
-          </Link>
-        ))}
-      </SimpleGrid>
-      <Heading m={10} as="h1" size="3xl">
-        <Center>
-          <Text fontFamily="Open Sans">Past Projects</Text>
-        </Center>
-      </Heading>
-      <SimpleGrid
-        m={10}
-        spacing={10}
-        templateColumns="repeat(auto-fill, minmax(400px, 2fr))"
-      >
-        {pastProject.map((project, index) => (
-          <Link href={project.link} _hover={{ textDecoration: 'none' }}>
-            <Card key={index}>
-              <CardHeader>
-                <Heading size="md">{project.title}</Heading>
-              </CardHeader>
-              <CardBody mt={-5}>
-                <Center>
-                  <Img src={project.image} borderRadius="lg" />
-                </Center>
-              </CardBody>
             </Card>
           </Link>
         ))}

@@ -38,6 +38,6 @@ export default Projects;
 
 let styles = {
   page: {
-    marginTop: '80px',
+    marginTop: '130px',
   },
 };

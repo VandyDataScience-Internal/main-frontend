@@ -46,7 +46,7 @@ const ProjectsMain = () => {
       <SimpleGrid
         m={10}
         spacing={10}
-        templateColumns="repeat(auto-fill, minmax(400px, 2fr))"
+        templateColumns="repeat(auto-fill, minmax(200px, 2fr))"
       >
         {blogs.map((project, index) => (
           <Link href={project.link} _hover={{ textDecoration: 'none' }}>

@@ -31,5 +31,6 @@ export default Blog;
 let styles = {
   page: {
     marginTop: '80px',
+    marginBottom: '200px',
   },
 };
