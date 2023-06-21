@@ -57,7 +57,7 @@ const ProjectsMain = () => {
               <Center>
                 <CardBody mt={-5}>
                   <Center>
-                    <Img src={project.image} borderRadius="lg" />
+                    <Img src={project.image} borderRadius="lg" height={400}/>
                   </Center>
                 </CardBody>
               </Center>
