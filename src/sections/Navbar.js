@@ -103,68 +103,31 @@ const Navbar = () => {
                 style={styles.button}
                 as={IconButton}
                 aria-label="Options"
-                icon={
-                  isOpen ? (
-                    <CloseIcon boxSize={30} color="white" />
-                  ) : (
-                    <HamburgerIcon boxSize={45} color="white" />
-                  )
-                }
+                icon={<HamburgerIcon boxSize={45} color="white" />}
                 _expanded={{ outline: 'none', boxShadow: 'none' }}
                 _focus={{ outline: 'none', boxShadow: 'none' }}
                 onClick={toggleMenu}
-                transform={isOpen ? 'rotate(180deg)' : ''}
               />
               <Box overflow="hidden">
                 <MenuList style={styles.list} bg="#FDDC6A">
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Home" style={styles.link}>
-                      Home
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Projects" style={styles.link}>
-                      Projects
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Team" style={styles.link}>
-                      Team
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Blog" style={styles.link}>
-                      Blog
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Opportunities" style={styles.link}>
-                      Opportunities
-                    </Link>
-                  </MenuItem>
-                  <MenuItem
-                    style={styles.items}
-                    _hover={{ bg: '#2F2F2F', color: 'white' }}
-                  >
-                    <Link to="/Contact" style={styles.link}>
-                      Contact Us
-                    </Link>
-                  </MenuItem>
+                  <Button as={Link} to="/Home" style={styles.button}>
+                    Home
+                  </Button>
+                  <Button as={Link} to="/Projects" style={styles.button}>
+                    Projects
+                  </Button>
+                  <Button as={Link} to="/Team" style={styles.button}>
+                    Team
+                  </Button>
+                  <Button as={Link} to="/Blog" style={styles.button}>
+                    Blog
+                  </Button>
+                  <Button as={Link} to="/Opportunities" style={styles.button}>
+                    Opportunities
+                  </Button>
+                  <Button as={Link} to="/Contact" style={styles.button}>
+                    Contact Us
+                  </Button>
                 </MenuList>
               </Box>
             </Menu>

@@ -40,7 +40,7 @@ const ProjectsMain = () => {
     <ChakraProvider theme={theme}>
       <Heading m={10} as="h1" size="3xl">
         <Center>
-          <Text fontFamily="Open Sans">Our Blogs</Text>
+          <Text fontFamily="Open Sans">Blog</Text>
         </Center>
       </Heading>
       <SimpleGrid

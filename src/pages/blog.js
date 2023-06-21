@@ -30,7 +30,7 @@ export default Blog;
 
 let styles = {
   page: {
-    marginTop: '80px',
+    marginTop: '120px',
     marginBottom: '200px',
   },
 };
