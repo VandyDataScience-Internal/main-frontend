@@ -47,13 +47,22 @@ const Footer = () => {
           {' '}
           {/*Row of social media buttons*/}
           {/*Just sub the hashtags for what links you want to put and it should be good?*/}
-          <SocialButton label={'Instagram'} href={'#'}>
+          <SocialButton
+            label={'Instagram'}
+            href={'https://www.instagram.com/vandydatascience/'}
+          >
             <SiInstagram />
           </SocialButton>
-          <SocialButton label={'LinkedIn'} href={'#'}>
+          <SocialButton
+            label={'LinkedIn'}
+            href={'https://www.linkedin.com/company/vanderbilt-data-science'}
+          >
             <SiLinkedin />
           </SocialButton>
-          <SocialButton label={'Email'} href={'#'}>
+          <SocialButton
+            label={'Email'}
+            href={'mailto:vanderbilt.datascience@gmail.com'}
+          >
             <SiGmail />
           </SocialButton>
         </Stack>
