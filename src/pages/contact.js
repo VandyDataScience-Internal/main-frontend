@@ -14,6 +14,7 @@ import {
   Textarea,
   Button,
   Tooltip,
+  Text,
 } from '@chakra-ui/react';
 import emailjs from '@emailjs/browser';
 
@@ -76,6 +77,7 @@ export function Inside({ src, bio, name }) {
       onMouseEnter={handleHover}
       onMouseLeave={handleMouseLeave}
       style={styles.page}
+      
     >
       {!isHovered && (
         <Box>
@@ -121,7 +123,8 @@ const Team = () => {
 
   return (
     <ChakraProvider>
-      <Container marginBottom={5}>
+      <Box fontFamily={'Inter'}>
+      <Box marginBottom={5}>
         <Box as="form" ref={form} onSubmit={sendEmail} style={styles.yellowBox}>
           {isSubmitted ? (
             <Heading as="h3" size="xl">
@@ -133,13 +136,13 @@ const Team = () => {
           ) : (
             <>
               <FormControl marginBottom="15px">
-                <Heading as="h1" size="xl" marginBottom="5px">
+                <Heading as="h1" size="xl" marginBottom="5px" fontWeight={'700'}>
                   Contact Us
                 </Heading>
-                <p marginBottom="15px">
+                <Text marginBottom="15px" fontWeight={'400'}>
                   Please fill out this form and we will contact you shortly.
                   <br></br>Thank you!
-                </p>
+                </Text>
               </FormControl>
               <FormControl marginBottom="15px">
                 <FormLabel>
@@ -182,23 +185,25 @@ const Team = () => {
                   placeholder="Enter your message here..."
                   required
                   name="message"
-                  rows={8}
+                  rows={4}
                   cols={50}
                   backgroundColor={'white'}
                 />
               </FormControl>
               <Button
                 marginBottom="15px"
-                colorScheme="teal"
+                bgColor="#FEE893"
+                color={'black'}
                 type="submit"
                 mt={4}
               >
-                Send
+                send
               </Button>
             </>
           )}
         </Box>
-      </Container>
+      </Box>
+      </Box>
     </ChakraProvider>
   );
 };
@@ -208,13 +213,11 @@ export default Team;
 // all styling
 let styles = {
   yellowBox: {
-    height: '630px',
-    width: '500px',
-    marginTop: '150px',
+    height: '80vh',
+    width: '50vw',
+    marginTop: '15vh',
+    marginLeft: '2vw',
     fontFamily: 'sans-serif',
-    marginLeft: '35%',
-    background: '#FDDC7E',
-    boxShadow: '2px 3px 5px #999',
-    padding: '20px',
   },
+  
 };

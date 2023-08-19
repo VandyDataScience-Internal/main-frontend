@@ -6,13 +6,13 @@ import {
   Image,
   VisuallyHidden,
 } from '@chakra-ui/react';
-
+import {Link} from 'react-router-dom';
 import { SiLinkedin, SiGmail, SiInstagram } from 'react-icons/si';
 // import { ReactNode } from 'react';
 
 export function SocialButton({ children, label, href }) {
   return (
-    <chakra.button href={href} marginLeft="25px" color="#FDDC7E">
+    <chakra.button href={href} marginLeft="25px" color="white">
       <VisuallyHidden>{label}</VisuallyHidden>
       {children}
     </chakra.button>
@@ -21,7 +21,7 @@ export function SocialButton({ children, label, href }) {
 
 const Footer = () => {
   return (
-    <Box bg="grey" bottom="0" left="0" right="0">
+    <Box bg="black" bottom="0" left="0" right="0">
       <Container height="20%">
         <a href="/">
           <Image
@@ -32,6 +32,7 @@ const Footer = () => {
             left="15px"
             height="80px"
             width="140px"
+            top = {'3vh'}
           />
         </a>
         <Stack
@@ -39,7 +40,7 @@ const Footer = () => {
           position="relative"
           right="0"
           paddingLeft="80%"
-          top="-25px"
+          top="-5vh"
         >
           <SocialButton label={'Instagram'} href={'#'}>
             <SiInstagram />
@@ -47,9 +48,11 @@ const Footer = () => {
           <SocialButton label={'LinkedIn'} href={'#'}>
             <SiLinkedin />
           </SocialButton>
-          <SocialButton label={'Email'} href={'#'}>
-            <SiGmail />
-          </SocialButton>
+          <Link to="/contact">
+              <SocialButton label={'Email'}>
+                  <SiGmail />
+              </SocialButton>
+          </Link>
         </Stack>
       </Container>
     </Box>

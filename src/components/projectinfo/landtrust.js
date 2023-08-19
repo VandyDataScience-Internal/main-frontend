@@ -22,12 +22,12 @@ const LandTrustPg = () => {
   return (
     <ChakraProvider theme={theme}>
         <Center>
-          <Heading p={10} as='h1' size='3xl' >
-                <Text fontFamily="Open Sans"> Geo-spatial Analysis for the Land Trust of Tennessee </Text>
+          <Heading borderTopWidth={'15vh'} borderColor = {'white'} as='h1' size='3xl' >
+                <Text fontFamily="Inter" fontWeight={'700'}> Geo-spatial Analysis for the Land Trust of Tennessee </Text>
             </Heading>
         </Center>
 
-          <Container maxW='container.lg'>
+          <Container maxW='container.lg' fontFamily={'Inter'} fontWeight={'400'} marginTop={'5vh'}>
             <Center>
                 <Text fontSize='2xl'>
                 The Land Trust of Tennessee aims to understand

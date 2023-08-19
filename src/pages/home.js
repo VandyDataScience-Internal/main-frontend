@@ -6,13 +6,13 @@ import {
   VStack,
   Image,
   Heading,
-  Text,
+  Text
 } from '@chakra-ui/react';
+import Typewriter from 'typewriter-effect';
+
 import InstaPosts from '../components/Instagramposts';
-import BarsAnimation from '../components/BarsAnimation';
 import Carousel from '../components/Carousel';
 import theme from '../theme';
-import backgroundImage from '../assets/background/datascience_background5.png';
 import backgroundImage2 from '../assets/background/datascience_background1.png';
 
 import image1 from '../assets/images/consprkcent.png';
@@ -55,72 +55,56 @@ export default function Home() {
   return (
     <ChakraProvider theme={theme}>
       <Flex
-        minWidth="max-content"
-        alignItems="center"
-        textAlign="center"
-        fontSize="xl"
+          minWidth="max-content"
+          alignItems="flex-start"
+          textAlign="left"  // Adjusted this line
+          fontSize="xl"
       >
         <VStack spacing={8}>
-          <div
-            style={{
-              marginTop: '10vh',
-              overflow: 'hidden',
-              position: 'relative',
-            }}
-          >
-            <Image
-              src={backgroundImage}
-              objectFit="cover"
-              objectPosition={'center 20%'}
-              height={'70vh'}
-              width={'98.7239551vw'}
-            />
-          </div>
-          <Flex
-            justifyContent={'space-around'}
-            alignItems={'flex-end'}
-            width={'70%'}
-            position={'absolute'} // set to relative
-            top={'50vh'}
-          >
-            {BarsAnimation(25, -1)}
-          </Flex>
-          <div style={{ marginBottom: '12vh' }}>
+            <div
+                style={{
+                    marginTop: '10vh',
+                    overflow: 'hidden',
+                    position: 'relative',
+                }}
+            >
+                <Box width={'100vw'} display="flex" alignItems="flex-start" bgColor="#FEE893" height={'90vh'} paddingLeft="2rem">
+                    <Box 
+                        paddingTop={'18vh'}
+                        fontSize="8vw" 
+                        fontWeight="900" 
+                        color="black" 
+                        maxWidth="80vw" 
+                        wordwrap="break-word" 
+                        fontFamily="Inter"
+                        textAlign="left"  // Added this line
+                    >
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter
+                                .typeString('your data-driven solution.')
+                                .start();
+                            }}
+                        />
+                    </Box>
+                </Box>
+            </div>
+          {/* <div style={{ marginBottom: '12vh' }}>
             <Heading size={'s'}>Welcome to the</Heading>
             <Heading>Vanderbilt Data Science Club</Heading>
-          </div>
-          <Heading as="h2" size="lg" pb={'5vw'} pl={'7vw'}>
-            <Box as="span" display="inline-block">
-              <Text as="span" pb="5px">
-                Who we've partnered with!
-              </Text>
-            </Box>
-          </Heading>
-          <Carousel images={images} />
-          <Flex>
-            <Box width={'45vw'} display="flex" justifyContent="center">
-              <Image
-                ref={ref}
-                src={backgroundImage2}
-                fallbackSrc="https://via.placeholder.com/150"
-                opacity={isVisible ? 1 : 0}
-                transition="opacity 0.4s ease-in-out"
-                objectFit={'cover'}
-                height={'40vh'}
-              />
-            </Box>
-            <Box
-              width={'45vw'}
-              display="flex"
-              justifyContent="center"
-              flexDirection="column"
-              alignItems="center"
-              ref={ref}
-              opacity={isVisible ? 1 : 0}
-              transition="opacity 1s ease-in-out"
+          </div> */}
+          <Box
+            width="45vw"  // Occupy 50% width
+            marginLeft="-45vw" 
+            display="flex"
+            justifyContent="center"
+            flexDirection="column"
+            alignItems="flex-start"
+            ref={ref}
             >
               <Heading size={'lg'}>Our Mission</Heading>
-              <Text marginLeft={4}>
+              <Box bgColor={'black'} height={'0.3vh'} width={'12vw'} fontFamily={'Inter'} fontWeight={'700'}></Box>
+              <Text marginTop={'4vh'} fontFamily={'Inter'} fontWeight={'400'}>
                 Vanderbilt Data Science aims to empower students from all
                 experience levels to learn data science, artificial intelligence
                 (AI), and machine learning (ML) through a project-based approach
@@ -131,8 +115,28 @@ export default function Home() {
                 outside the classroom environment.
               </Text>
             </Box>
+          <Heading as="h2" size="lg" pl={'7vw'}>
+            <Box as="span" display="inline-block">
+              <Text as="span" pb="5px" fontFamily={'Inter'} fontWeight={'700'}>
+                Who we've partnered with!
+              </Text>
+            </Box>
+          </Heading>
+          <Carousel images={images}/>
+          <Flex>
+            {/* <Box width={'45vw'} display="flex" justifyContent="center">
+              <Image
+                ref={ref}
+                src={backgroundImage2}
+                fallbackSrc="https://via.placeholder.com/150"
+                opacity={isVisible ? 1 : 0}
+                transition="opacity 0.4s ease-in-out"
+                objectFit={'cover'}
+                height={'40vh'}
+              />
+            </Box> */}
           </Flex>
-          <Box minHeight={'20vh'} bgColor={'white'} />
+          {/* <Box minHeight={'20vh'} bgColor={'white'} /> */}
         </VStack>
       </Flex>
 

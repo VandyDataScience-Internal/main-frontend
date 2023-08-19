@@ -22,12 +22,12 @@ const CentParkPg = () => {
   return (
     <ChakraProvider theme={theme}>
         <Center>
-          <Heading p={10} as='h1' size='3xl' >
-                <Text fontFamily="Open Sans"> Centennial Park Conservancy</Text>
+          <Heading borderTopWidth={'15vh'} borderColor = {'white'} as='h1' size='3xl' >
+                <Text fontFamily="Inter" fontWeight={'700'}> Centennial Park Conservancy</Text>
             </Heading>
         </Center>
 
-          <Container maxW='container.lg'>
+          <Container maxW='container.lg' fontFamily={'Inter'} fontWeight={'400'} marginTop={'5vh'}>
             <Center>
                 <Text fontSize='2xl'>
                   The Centennial Park Conservancy is a non-profit organization that collaborates with Metro Parks in order to preserve and enhance the Parthenon and Centennial Park. The Conservancy is dedicated to presenting accessible and inclusive programming, which they actively share with their community and visitors. However, the organization is currently facing challenges in comprehending and effectively utilizing the data gathered from their Google survey. This data plays a crucial role in informing their work.

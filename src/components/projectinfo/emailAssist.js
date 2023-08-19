@@ -22,12 +22,12 @@ const EmailAssistPg = () => {
   return (
     <ChakraProvider theme={theme}>
         <Center>
-          <Heading p={10} as='h1' size='3xl' >
-                <Text fontFamily="Open Sans"> Email Assist</Text>
+          <Heading borderTopWidth={'15vh'} borderColor = {'white'} as='h1' size='3xl' >
+                <Text  fontFamily="Inter" fontWeight={'700'}> Email Assist</Text>
             </Heading>
         </Center>
 
-          <Container maxW='container.lg'>
+          <Container maxW='container.lg' fontFamily={'Inter'} fontWeight={'400'} marginTop={'5vh'}>
             <Center>
                 <Text fontSize='2xl'>
                   We are making an Email Tool to help people with cognitive disabilities. Email already has issues, and these problems are likely worse for those with cognitive disabilities.

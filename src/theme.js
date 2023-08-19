@@ -3,8 +3,8 @@ import { extendTheme } from '@chakra-ui/react'
 
 const theme = extendTheme({
     fonts: {
-      heading: `'DM Sans', sans-serif`,
-      body:  `'Roboto', sans-serif`, 
+      heading: `'Inter', sans-serif`,
+      body:  `'Inter', sans-serif`, 
     },
     global: {
 

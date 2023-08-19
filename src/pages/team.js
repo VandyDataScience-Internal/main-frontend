@@ -154,7 +154,7 @@ let styles = {
     borderRadius: '50%',
     width: 160,
     height: 186,
-    background: '#FDDC7E',
+    background: '#FEE893',
     boxShadow: '2px 3px 5px #999',
   },
   text: {

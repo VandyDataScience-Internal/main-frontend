@@ -57,19 +57,22 @@ const Navbar = () => {
   return (
     <Box position="fixed" top={0} left={0} width="100%" zIndex={10}>
       <Flex
-        bg="#FDDC7E"
-        color="white"
+        bg="#FEE893"
+        color="black"
         alignItems="center"
+        width="100%"
         height="10vh"
         ref={navbarRef}
       >
-        <Box flex="1" display="flex" alignItems="center" paddingLeft="1rem">
+        <Box flex="1" display="flex" alignItems="center">
           <a href="/">
             <Image
               src={process.env.PUBLIC_URL + '/vds-logo.PNG'}
               alt="Logo"
               boxSize="80px"
               width="4.0wv"
+              paddingTop={'1vh'}
+              paddingLeft={'2vw'}
             />
           </a>
         </Box>
@@ -78,23 +81,23 @@ const Navbar = () => {
             // Render buttons when screen width is less than 950 pixels
             <Flex>
               <Button as={Link} to="/Home" style={styles.button}>
-                Home
+                home
               </Button>
               <Button as={Link} to="/Projects" style={styles.button}>
-                Projects
+                projects
               </Button>
               <Button as={Link} to="/Team" style={styles.button}>
-                Team
+                team
               </Button>
               <Button as={Link} to="/Blog" style={styles.button}>
-                Blog
+                blog
               </Button>
               <Button as={Link} to="/Opportunities" style={styles.button}>
-                Opportunities
+                opportunities
               </Button>
-              <Button as={Link} to="/Contact" style={styles.button}>
+              {/* <Button as={Link} to="/Contact" style={styles.button}>
                 Contact Us
-              </Button>
+              </Button> */}
             </Flex>
           ) : (
             // Render menu list when screen width is 950 pixels or more
@@ -103,13 +106,13 @@ const Navbar = () => {
                 style={styles.button}
                 as={IconButton}
                 aria-label="Options"
-                icon={<HamburgerIcon boxSize={45} color="white" />}
+                icon={<HamburgerIcon boxSize={45} color="black" />}
                 _expanded={{ outline: 'none', boxShadow: 'none' }}
                 _focus={{ outline: 'none', boxShadow: 'none' }}
                 onClick={toggleMenu}
               />
               <Box overflow="hidden">
-                <MenuList style={styles.list} bg="#FDDC6A">
+                <MenuList style={styles.list} bg="#FEE893">
                   <Button as={Link} to="/Home" style={styles.button}>
                     Home
                   </Button>
@@ -159,7 +162,7 @@ let styles = {
     display: 'grid',
     width: '100%',
     top: '-18px',
-    color: 'white',
+    color: 'black',
     border: 'none',
     textAlign: 'center',
   },
