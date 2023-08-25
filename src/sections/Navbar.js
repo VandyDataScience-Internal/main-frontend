@@ -89,9 +89,9 @@ const Navbar = () => {
               <Button as={Link} to="/Blog" style={styles.button}>
                 Blog
               </Button>
-              <Button as={Link} to="/Opportunities" style={styles.button}>
+              {/* <Button as={Link} to="/Opportunities" style={styles.button}>
                 Opportunities
-              </Button>
+              </Button> */}
               <Button as={Link} to="/Contact" style={styles.button}>
                 Contact Us
               </Button>
