@@ -25,12 +25,12 @@ import blogPageTwo from '../../assets/newsletters/10_1_22.png';
 const blogs = [
   {
     title: 'October 1st, 2022 Newsletter',
-    link: '/blogPageOne',
+    link: '/Blog/blogPageOne',
     image: blogPageOne,
   },
   {
     title: 'March 31st, 2023 Newlstter',
-    link: '/blogPageTwo',
+    link: '/Blog/blogPageTwo',
     image: blogPageTwo,
   },
 ];

@@ -32,15 +32,18 @@ function App() {
         <Route path="/Blog" element={<Blog />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/" element={<ProjectsMain />} />
-        <Route path="/centennialpark" element={<CentParkPg />} />
-        <Route path="/emailAssist" element={<EmailAssistPg />} />
-        <Route path="/girlscouts" element={<GirlScoutsPg />} />
-        <Route path="/landtrusttn" element={<LandTrustPg />} />
-        <Route path="/nash0" element={<NashZeroPg />} />
-        <Route path="/ancientartifacts" element={<AncientArtifactsPg />} />
+        <Route path="/Projects/centennialpark" element={<CentParkPg />} />
+        <Route path="/Projects/emailAssist" element={<EmailAssistPg />} />
+        <Route path="/Projects/girlscouts" element={<GirlScoutsPg />} />
+        <Route path="/Projects/landtrusttn" element={<LandTrustPg />} />
+        <Route path="/Projects/nash0" element={<NashZeroPg />} />
+        <Route
+          path="/Projects/ancientartifacts"
+          element={<AncientArtifactsPg />}
+        />
         <Route path="/" element={<BlogMain />} />
-        <Route path="/blogPageOne" element={<BlogPageOne />} />
-        <Route path="/blogPageTwo" element={<BlogPageTwo />} />
+        <Route path="/Blog/blogPageOne" element={<BlogPageOne />} />
+        <Route path="/Blog/blogPageTwo" element={<BlogPageTwo />} />
       </Routes>
       <Footer />
     </BrowserRouter>

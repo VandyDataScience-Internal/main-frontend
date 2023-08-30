@@ -19,8 +19,8 @@ const Blog = () => {
     <Box style={styles.page}>
       <Routes>
         <Route path="/" element={<BlogMain />} />
-        <Route path="/blogPageOne" element={<BlogPageOne />} />
-        <Route path="/blogPageTwo" element={<BlogPageTwo />} />
+        <Route path="/Blog/blogPageOne" element={<BlogPageOne />} />
+        <Route path="/Blog/blogPageTwo" element={<BlogPageTwo />} />
       </Routes>
     </Box>
   );

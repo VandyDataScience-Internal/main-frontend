@@ -29,26 +29,30 @@ import ealogo from '../../assets/images/emailAssistLogo.png';
 const pastProject = [
   {
     title: 'Centennial Park Conservancy',
-    link: '/centennialpark',
+    link: '/Projects/centennialpark',
     image: centParkImg,
   },
   {
     title: 'Girl Scouts of Middle Tennessee',
-    link: '/girlscouts',
+    link: '/Projects/girlscouts',
     image: girlScoutImg,
   },
   {
     title: 'Geo-spatial Analysis for the Land Trust of Tennessee',
-    link: '/landtrusttn',
+    link: '/Projects/landtrusttn',
     image: landTrustImg,
   },
   {
     title: 'Nash0: Striving for Zero Waste',
-    link: '/nash0',
+    link: '/Projects/nash0',
     image: nashZeroImg,
   },
-  { title: 'Ancient Artifacts', link: '/ancientartifacts', image: aalogo },
-  { title: 'Email Assist', link: '/emailassist', image: ealogo },
+  {
+    title: 'Ancient Artifacts',
+    link: '/Projects/ancientartifacts',
+    image: aalogo,
+  },
+  { title: 'Email Assist', link: '/Projects/emailassist', image: ealogo },
 ];
 
 const ProjectsMain = () => {
